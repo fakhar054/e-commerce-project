@@ -1,0 +1,78 @@
+@import url("https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap");
+.my_wishlist {
+  font-family: "Jost" !important;
+  position: relative;
+}
+.heading_div {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+.my_wishlist .product_grid_main_div {
+  background-color: white;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 30px;
+}
+.mar_top {
+  margin-top: 90px;
+}
+.my_wishlist .product_parent_div {
+  max-width: 250px;
+  height: 370px;
+  /* border: 1px solid black; */
+}
+.my_wishlist .product_parent_div .img_div {
+  max-width: 244px;
+  overflow: hidden;
+  height: 260px;
+  background-color: #f6f6f6;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 11px;
+}
+.my_wishlist .product_parent_div .img_div img {
+  max-width: 193px;
+  height: 197px;
+}
+.my_wishlist .content {
+  margin-top: 20px;
+}
+.my_wishlist .content h6 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0 !important;
+}
+.my_wishlist .content p#color_gray {
+  font-size: 13px;
+  font-weight: 400;
+  color: #626665;
+}
+.my_wishlist .content .price_div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.my_wishlist .content .price_div p {
+  margin-top: 0 !important  ;
+  font-size: 13px;
+  font-weight: 500;
+}
+.my_wishlist .content .price_div p#old_Price {
+  color: #626665;
+}
+@media screen and (max-width: 750px) {
+  .my_wishlist .product_grid_main_div {
+    margin-top: 30px;
+    grid-template-columns: 1fr;
+  }
+  .my_wishlist .product_parent_div {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
