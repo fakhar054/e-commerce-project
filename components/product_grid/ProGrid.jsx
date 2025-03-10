@@ -1,5 +1,5 @@
 import React from "react";
-import "./product_grid.css";
+import "./Product_grid.css";
 export default function ProGrid() {
   return (
     <>
@@ -54,24 +54,23 @@ export default function ProGrid() {
             </div>
 
             <div className="col-md-4">
-            <div className="second_col_main">
-                  <div className="small_image1 second_col_div">
-                    <img src="/assets/images/products/laptop.png" alt="" />
-                    <p>
-                      Lenovo Laptop
-                      <span id="small_dis" className="mt-2 ">
-                        Upto 70% OFF
-                      </span>
-                    </p>
-                  </div>
-                  <div className="small_image1 second_col_div_2">
-                    <img src="/assets/images/products/laptop.png" alt="" />
-                    <p>
-                      Lenovo Laptop <span id="small_dis">Upto 70% OFF</span>
-                    </p>
-                  </div>
+              <div className="second_col_main">
+                <div className="small_image1 second_col_div">
+                  <img src="/assets/images/products/laptop.png" alt="" />
+                  <p>
+                    Lenovo Laptop
+                    <span id="small_dis" className="mt-2 ">
+                      Upto 70% OFF
+                    </span>
+                  </p>
                 </div>
-
+                <div className="small_image1 second_col_div_2">
+                  <img src="/assets/images/products/laptop.png" alt="" />
+                  <p>
+                    Lenovo Laptop <span id="small_dis">Upto 70% OFF</span>
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
         </div>

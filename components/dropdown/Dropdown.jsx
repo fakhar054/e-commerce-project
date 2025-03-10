@@ -13,6 +13,8 @@ function DropdownMenu({ title, options, onOptionClick, customComponent }) {
 
   const getCheckboxClass = () => {
     if (title === "Product Categories") return "checkbox-green";
+    if (title === "Filter by Size") return "checkbox-green";
+
     if (title === "Filter by Color") return "checkbox-yellow";
     return "checkbox-default";
   };
@@ -38,17 +40,19 @@ function DropdownMenu({ title, options, onOptionClick, customComponent }) {
           ) : (
             <ul>
               {options.map((option, index) => (
-                <li
-                  key={index}
-                  className="cursor-pointer py-1 "
-                  onClick={() => onOptionClick(option)}
-                >
+                <li key={index} className="cursor-pointer py-1">
                   <input
                     type="checkbox"
                     className={`mr-2 ${getCheckboxClass()}`}
                     id={`checkbox-${title}-${index}`}
+                    onClick={() => onOptionClick(option)}
                   />
-                  {option}
+                  <label
+                    htmlFor={`checkbox-${title}-${index}`}
+                    className="flex items-center"
+                  >
+                    {option}
+                  </label>
                 </li>
               ))}
             </ul>
@@ -88,7 +92,7 @@ export default function Dropdown() {
       />
       <DropdownMenu
         title="Filter by Size"
-        options={["Small", "Medium", "Large"]}
+        options={["S", "M", "L"]}
         onOptionClick={handleOptionClick}
       />
     </div>

@@ -12,7 +12,7 @@ import Testimonials from "@/components/homes/home-3/Testimonials";
 import Blog from "@/components/homes/home-3/Blog";
 import Cta from "@/components/homes/home-3/Cta";
 import Footer2 from "@/components/footers/Footer2";
-import Brands3 from "@/components/common/Brands2";
+// import Brands3 from "@/components/common/Brands2";
 import Popular_Products from "@/components/popular_products/Popular_Products";
 import BrandSlider from "@/components/BrandSlider/BrandSlider";
 import Popular_Products2 from "@/components/Popular_Products2/Popular_Products2";

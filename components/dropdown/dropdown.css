@@ -23,15 +23,19 @@ button.drop_down {
   padding-left: 0 !important;
 }
 .dropdown_menu_list ul li {
+  height: 20px;
+  align-items: center;
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 15px;
   font-size: 16px;
   font-weight: 400;
   font-family: "Jost" !important ;
   cursor: pointer;
+  margin-bottom: 15px;
 }
+
 input[type="checkbox"] {
   appearance: none;
   width: 20px;
@@ -76,4 +80,26 @@ input.checkbox-green[type="checkbox"]:checked::before {
 
 .checkbox-default {
   background-color: lightgray;
+}
+
+input.checkbox-red[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: red;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+}
+
+input.checkbox-red[type="checkbox"]:checked::before {
+  content: "✔";
+  font-size: 16px;
+  color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
 }

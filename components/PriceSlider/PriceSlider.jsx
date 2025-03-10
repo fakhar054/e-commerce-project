@@ -12,7 +12,7 @@ export default function PriceSlider() {
   return (
     <>
       <div className="slider-container">
-        <div className="slider-value">Price: {value}</div>
+        <div className="slider-value">Price: $ {value}</div>
         <Slider
           className="custom-slider"
           value={value}

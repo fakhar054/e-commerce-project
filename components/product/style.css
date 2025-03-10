@@ -3,6 +3,9 @@
 * {
   font-family: "Jost", serif;
 }
+.icon_wishlist {
+  color: green;
+}
 .results_main {
   display: flex;
   align-items: center;
