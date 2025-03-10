@@ -10,6 +10,15 @@
   left: 0;
   z-index: 1000;
 }
+.my_profile {
+  position: relative;
+}
+.position_fixed {
+  position: sticky;
+  top: 80px;
+  max-height: 80vh;
+  /* overflow-y: auto; */
+}
 .my_wishlist .product_grid_main_div {
   background-color: white;
   display: grid;
@@ -64,6 +73,12 @@
 .my_wishlist .content .price_div p#old_Price {
   color: #626665;
 }
+@media screen and (max-width: 850px) {
+  .product_grid_main_div {
+    margin-top: 100px;
+  }
+}
+
 @media screen and (max-width: 750px) {
   .my_wishlist .product_grid_main_div {
     margin-top: 30px;

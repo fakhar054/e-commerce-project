@@ -38,10 +38,12 @@ export default function page() {
       <div className="heading_div">
         <Header2 />
       </div>
-      <div className="container ">
+      <div className="container mar_top">
         <div className="row" onClick={closeEditform}>
-          <div className="col-md-4">
-            <MyProfile />
+          <div className="col-md-4 my_profile">
+            <div className="position_fixed">
+              <MyProfile />
+            </div>
           </div>
           <div className="col-md-8 second_div">
             <p id="btn" className="mb-3">

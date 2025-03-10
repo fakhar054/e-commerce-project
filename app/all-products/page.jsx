@@ -5,6 +5,7 @@ import AllProduct from "@/components/product/product";
 import Dropdown from "@/components/dropdown/Dropdown";
 import Header2 from "@/components/headers/Header2";
 import Footer2 from "@/components/footers/Footer2";
+import Features from "@/components/Features_div/page";
 
 export default function page() {
   return (
@@ -20,6 +21,7 @@ export default function page() {
           <div className="col-md-12 col-lg-9 ">
             <AllProduct />
           </div>
+          <Features />
         </div>
       </div>
       <Footer2 />

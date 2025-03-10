@@ -13,10 +13,12 @@ export default function page() {
       </div>
       <div className="container mar_top">
         <div className="row">
-          <div className="col-md-4">
-            <MyProfile />
+          <div className="col-lg-4 my_profile mb-2">
+            <div className="position_fixed">
+              <MyProfile />
+            </div>
           </div>
-          <div className="col-md-8">
+          <div className="col-lg-8">
             <div className="product_grid_main_div">
               <div className="product_parent_div">
                 <div className="img_div">

@@ -52,7 +52,7 @@ input.checkbox-green[type="checkbox"] {
   appearance: none;
   width: 20px;
   height: 20px;
-  background-color: green;
+  background-color: green !important;
   border-radius: 4px;
   display: inline-block;
   position: relative;
@@ -70,36 +70,34 @@ input.checkbox-green[type="checkbox"]:checked::before {
   text-align: center;
 }
 
-.checkbox-green {
-  background-color: green;
-}
-
-.checkbox-yellow {
-  background-color: yellow;
-}
-
-.checkbox-default {
-  background-color: lightgray;
-}
-
-input.checkbox-red[type="checkbox"] {
+/* input[type="checkbox"] {
   appearance: none;
   width: 20px;
   height: 20px;
-  background-color: red;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+} */
+
+input.red-checkbox[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: red !important;
   border-radius: 4px;
   display: inline-block;
   position: relative;
   cursor: pointer;
 }
 
-input.checkbox-red[type="checkbox"]:checked::before {
-  content: "✔";
-  font-size: 16px;
-  color: white;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
+input.red-green[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background-color: green !important;
+  border-radius: 4px;
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
 }

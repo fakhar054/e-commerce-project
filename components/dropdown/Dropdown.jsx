@@ -6,17 +6,29 @@ import PriceSlider from "../PriceSlider/PriceSlider";
 
 function DropdownMenu({ title, options, onOptionClick, customComponent }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [checkedOptions, setCheckedOptions] = useState({});
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
   };
 
-  const getCheckboxClass = () => {
-    if (title === "Product Categories") return "checkbox-green";
-    if (title === "Filter by Size") return "checkbox-green";
+  const handleCheckboxChange = (option) => {
+    setCheckedOptions((prevState) => ({
+      ...prevState,
+      [option]: !prevState[option], // Toggle checked state
+    }));
+    onOptionClick(option);
+  };
 
-    if (title === "Filter by Color") return "checkbox-yellow";
-    return "checkbox-default";
+  // Function to generate class based on label text
+  const getCheckboxClass = (option) => {
+    if (title === "Filter by Color" && checkedOptions[option]) {
+      return `${option.toLowerCase()}-checkbox`; // Convert label to lowercase for class name
+    }
+    if (title === "Product Categories" && checkedOptions[option]) {
+      return "checkbox-green"; // Keeps existing functionality for Product Categories
+    }
+    return "";
   };
 
   return (
@@ -34,7 +46,7 @@ function DropdownMenu({ title, options, onOptionClick, customComponent }) {
       </button>
 
       {isOpen && (
-        <div className="absolute w-48 bg dropdown_menu_list ">
+        <div className="absolute w-48 bg dropdown_menu_list">
           {customComponent ? (
             <div>{customComponent}</div>
           ) : (
@@ -43,9 +55,10 @@ function DropdownMenu({ title, options, onOptionClick, customComponent }) {
                 <li key={index} className="cursor-pointer py-1">
                   <input
                     type="checkbox"
-                    className={`mr-2 ${getCheckboxClass()}`}
                     id={`checkbox-${title}-${index}`}
-                    onClick={() => onOptionClick(option)}
+                    checked={checkedOptions[option] || false}
+                    onChange={() => handleCheckboxChange(option)}
+                    className={`mr-2 ${getCheckboxClass(option)}`} // Dynamically apply class
                   />
                   <label
                     htmlFor={`checkbox-${title}-${index}`}
@@ -69,6 +82,7 @@ export default function Dropdown() {
   const handleOptionClick = (option) => {
     console.log(`${option} clicked`);
   };
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setCurrentPath(window.location.pathname);
@@ -77,7 +91,7 @@ export default function Dropdown() {
 
   return (
     <div className="flex flex-col gap-4">
-      <p id="path"> {currentPath}</p>
+      <p id="path">{currentPath}</p>
 
       <DropdownMenu
         title="Product Categories"

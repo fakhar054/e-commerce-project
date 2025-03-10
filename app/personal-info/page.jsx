@@ -14,8 +14,10 @@ export default function page() {
       </div>
       <div className="container mar_top">
         <div className="row">
-          <div className="col-lg-4 mb-3">
-            <MyProfile />
+          <div className="col-lg-4 mb-3 my_profile">
+            <div className="position_fixed">
+              <MyProfile />
+            </div>
           </div>
           <div className="col-lg-8">
             <div className="first_flex_div">

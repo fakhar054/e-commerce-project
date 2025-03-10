@@ -16,6 +16,16 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
+
+.position_fixed {
+  position: sticky;
+  top: 80px;
+  max-height: 80vh;
+  /* overflow-y: auto; */
+}
+.my_profile {
+  position: relative;
+}
 .my_Orders .my_profile h1 {
   font-size: 36px;
   font-weight: 400;
@@ -77,7 +87,7 @@
   font-size: 70px;
 }
 .my_Orders .product_image {
-  margin-top: 80px;
+  margin-top: 90px;
 }
 .my_Orders .product_image img {
   width: 69px;
@@ -112,6 +122,16 @@
   border-radius: 6px;
   font-size: 10px;
   font-weight: 700;
+  color: #05961b;
+}
+
+.my_Orders .flex_div_props p#Inprocess {
+  background-color: #fcf7ea;
+  padding: 5px 12px;
+  border-radius: 6px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #f2ca00;
 }
 .content_div {
   flex: 1.5;
@@ -154,4 +174,10 @@
 .single_order_div .view_div button.cancel {
   background-color: #ff7262;
   color: white;
+}
+
+@media screen and (max-width: 850px) {
+  .margin_top {
+    margin-top: 50px !important;
+  }
 }
