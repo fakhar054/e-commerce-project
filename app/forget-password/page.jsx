@@ -1,10 +1,17 @@
+"use client";
 import React from "react";
 import "./forget-password.css";
 import "../../public/assets/css/theme/main.css";
 import { IoIosArrowBack } from "react-icons/io";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function ForgetPassword() {
+  const router = useRouter();
+
+  const handleBackBtn = () => {
+    router.push("/login");
+  };
   return (
     <section className="forget_pass" id="forget_pass">
       <div className="container">
@@ -14,7 +21,7 @@ export default function ForgetPassword() {
           </div>
 
           <div className="col-lg-5 j-center">
-            <div className="icon_div">
+            <div className="icon_div" onClick={handleBackBtn}>
               <IoIosArrowBack />
               <p>Back</p>
             </div>

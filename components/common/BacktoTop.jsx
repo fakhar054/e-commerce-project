@@ -1,5 +1,5 @@
 "use client";
-
+import "./backtoTop.css";
 import { useContextElement } from "@/context/Context";
 import { useEffect, useState } from "react";
 
@@ -41,7 +41,7 @@ export default function BacktoTop() {
       }`}
     >
       <div
-        className="darkmode-trigger cstack w-40px h-40px rounded-circle text-none bg-gray-100 dark:bg-gray-700 dark:text-white"
+        className="hiding_this darkmode-trigger cstack w-40px h-40px rounded-circle text-none bg-gray-100 dark:bg-gray-700 dark:text-white"
         data-darkmode-toggle=""
       >
         <label className="switch">

@@ -11,7 +11,7 @@ export default function LoginPage() {
           <img
             className="logoImg"
             alt="Lexend"
-            src="/assets/images/common/logo_transparent.png"
+            src="/assets/images/common/logo_krist.png"
           />
           <div className="col-lg-7">
             <img src="/assets/images/forms/login_girl_pic.png" />
