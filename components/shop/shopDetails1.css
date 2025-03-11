@@ -89,6 +89,7 @@
   width: 32px;
   height: 32px;
   border-radius: 4px;
+  cursor: pointer;
 }
 .single_product .box-red {
   background-color: #ee0404;
@@ -350,10 +351,12 @@ p.reviewed {
 .pop_up .btn_div button#view_cart {
   background-color: transparent;
 }
-.pop_up .btn_div button#checkout {
+.pop_up button#checkout {
   background-color: black;
   color: white;
   margin-top: 10px;
+  width: 100%;
+  border-radius: 6px;
 }
 .tab_heading {
   font-size: 50px;
@@ -383,6 +386,59 @@ p.reviewed {
   font-size: 20px;
   font-weight: 400;
   color: #626665;
+}
+.quantity_div {
+  border: 1px solid black;
+  width: 90px;
+  height: 44px;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 3px 5px;
+  font-size: 20px;
+  font-weight: 500;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.box-container .box.active {
+  background-color: black;
+  color: white;
+}
+
+.btns_div {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  height: 44px;
+}
+
+.btn_div {
+  background-color: black;
+  color: white;
+  height: 100%;
+  padding: 0 50px;
+  font-size: 20px;
+  font-weight: 500;
+  border-radius: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.btns_div .heart_div {
+  border: 1px solid black;
+  height: 100%;
+  width: 44px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.heart_div .icon_size {
+  font-size: 20px;
 }
 
 @media screen and (max-width: 1030px) {

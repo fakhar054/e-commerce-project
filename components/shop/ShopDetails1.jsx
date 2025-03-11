@@ -216,7 +216,7 @@ export default function ShopDetails1({ product }) {
                         // href={"/shop-cart"}
                         className="text_decoration"
                       >
-                        Add To Cart
+                        Add To Cartttttt
                         {/* View Cart */}
                       </a>
                     </div>

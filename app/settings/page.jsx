@@ -32,7 +32,7 @@ export default function Page() {
                 </div>
               </div>
               <div className="time">
-                <button>Just Now</button>
+                <button>Light</button>
               </div>
             </div>
             <div className="parent_flex_div pb-2 mb-2">

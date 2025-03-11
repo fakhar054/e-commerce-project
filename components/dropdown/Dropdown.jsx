@@ -4,111 +4,213 @@ import React, { useState, useEffect } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import PriceSlider from "../PriceSlider/PriceSlider";
 
-function DropdownMenu({ title, options, onOptionClick, customComponent }) {
-  const [isOpen, setIsOpen] = useState(false);
-  const [checkedOptions, setCheckedOptions] = useState({});
-
-  const toggleDropdown = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const handleCheckboxChange = (option) => {
-    setCheckedOptions((prevState) => ({
-      ...prevState,
-      [option]: !prevState[option], // Toggle checked state
-    }));
-    onOptionClick(option);
-  };
-
-  // Function to generate class based on label text
-  const getCheckboxClass = (option) => {
-    if (title === "Filter by Color" && checkedOptions[option]) {
-      return `${option.toLowerCase()}-checkbox`; // Convert label to lowercase for class name
-    }
-    if (title === "Product Categories" && checkedOptions[option]) {
-      return "checkbox-green"; // Keeps existing functionality for Product Categories
-    }
-    return "";
-  };
-
-  return (
-    <div className="relative inline-block text-left">
-      <button
-        onClick={toggleDropdown}
-        className="flex items-center py-1 drop_down"
-      >
-        {title}
-        <RiArrowDropDownLine
-          className={`ml-2 transform drop_down_icon ${
-            isOpen ? "rotate-180" : "rotate-0"
-          }`}
-        />
-      </button>
-
-      {isOpen && (
-        <div className="absolute w-48 bg dropdown_menu_list">
-          {customComponent ? (
-            <div>{customComponent}</div>
-          ) : (
-            <ul>
-              {options.map((option, index) => (
-                <li key={index} className="cursor-pointer py-1">
-                  <input
-                    type="checkbox"
-                    id={`checkbox-${title}-${index}`}
-                    checked={checkedOptions[option] || false}
-                    onChange={() => handleCheckboxChange(option)}
-                    className={`mr-2 ${getCheckboxClass(option)}`} // Dynamically apply class
-                  />
-                  <label
-                    htmlFor={`checkbox-${title}-${index}`}
-                    className="flex items-center"
-                  >
-                    {option}
-                  </label>
-                </li>
-              ))}
-            </ul>
-          )}
-        </div>
-      )}
-    </div>
-  );
-}
-
 export default function Dropdown() {
-  const [currentPath, setCurrentPath] = useState("");
+  const [ProductCategories, setProductCategories] = useState(false);
+  const [filterbyPrice, setFilterbyPrice] = useState(false);
+  const [filterbyColor, setFilterbyColor] = useState(false);
 
-  const handleOptionClick = (option) => {
-    console.log(`${option} clicked`);
+  const handleProductCategories = () => {
+    setProductCategories(!ProductCategories);
   };
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setCurrentPath(window.location.pathname);
-    }
-  }, []);
+  const handleFilterebyPrice = () => {
+    setFilterbyPrice(!filterbyPrice);
+  };
 
+  const handlebyColor = () => {
+    setFilterbyColor(!filterbyColor);
+  };
   return (
-    <div className="flex flex-col gap-4">
-      <p id="path">{currentPath}</p>
+    <>
+      <div className="Product_Categories">
+        <div className="heading_icon" onClick={handleProductCategories}>
+          <h3>Product Categories</h3>
+          <RiArrowDropDownLine className="drop_down_icon" />
+        </div>
+        {ProductCategories && (
+          <ul>
+            <li>
+              <input
+                type="checkbox"
+                id="myCheckbox"
+                name="option1"
+                value="checked"
+              />
+              <label for="myCheckbox">Men</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                id="myCheckbox"
+                name="option1"
+                value="checked"
+              />
+              <label for="myCheckbox">Women</label>
+            </li>
+            <li>
+              <input
+                type="checkbox"
+                id="myCheckbox"
+                name="option1"
+                value="checked"
+              />
+              <label for="myCheckbox">Makeup</label>
+            </li>
+          </ul>
+        )}
 
-      <DropdownMenu
-        title="Product Categories"
-        options={["Option 1", "Option 2", "Option 3"]}
-        onOptionClick={handleOptionClick}
-      />
-      <DropdownMenu title="Filter by Price" customComponent={<PriceSlider />} />
-      <DropdownMenu
-        title="Filter by Color"
-        options={["Red", "Green", "Blue"]}
-        onOptionClick={handleOptionClick}
-      />
-      <DropdownMenu
-        title="Filter by Size"
-        options={["S", "M", "L"]}
-        onOptionClick={handleOptionClick}
-      />
-    </div>
+        <div className="filterByPrice_div">
+          <div className="heading_icon" onClick={handleFilterebyPrice}>
+            <h3>Filter by Price</h3>
+            <RiArrowDropDownLine className="drop_down_icon" />
+          </div>
+          {filterbyPrice && <PriceSlider />}
+        </div>
+
+        <div className="heading_icon" onClick={handlebyColor}>
+          <h3>Filter by Color</h3>
+          <RiArrowDropDownLine className="drop_down_icon" />
+        </div>
+        {filterbyColor && (
+          <ul>
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  className="red"
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">Red</label>
+              </li>
+              <p>(12)</p>
+            </div>
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  className="orange"
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">Orange</label>
+              </li>
+              <p>(12)</p>
+            </div>
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  className="blue"
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">Blue</label>
+              </li>
+              <p>(12)</p>
+            </div>
+
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  className="yellow"
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">Yellow</label>
+              </li>
+              <p>(12)</p>
+            </div>
+
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  className="green"
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">Green</label>
+              </li>
+              <p>(12)</p>
+            </div>
+          </ul>
+        )}
+        <div className="heading_icon" onClick={handlebyColor}>
+          <h3>Filter by Size</h3>
+          <RiArrowDropDownLine className="drop_down_icon" />
+        </div>
+        {filterbyColor && (
+          <ul>
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">S</label>
+              </li>
+              <p>(12)</p>
+            </div>
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">M</label>
+              </li>
+              <p>(12)</p>
+            </div>
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">L</label>
+              </li>
+              <p>(12)</p>
+            </div>
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">XL</label>
+              </li>
+              <p>(12)</p>
+            </div>
+            <div className="color_div d-flex">
+              <li>
+                <input
+                  type="checkbox"
+                  id="myCheckbox"
+                  name="option1"
+                  value="checked"
+                />
+                <label for="myCheckbox">XXL</label>
+              </li>
+              <p>(12)</p>
+            </div>
+          </ul>
+        )}
+      </div>
+    </>
   );
 }

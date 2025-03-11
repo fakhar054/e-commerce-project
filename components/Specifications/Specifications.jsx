@@ -5,7 +5,7 @@ import "../../public/assets/css/theme/main.css";
 export default function Specifications() {
   return (
     <section className="specfication">
-      <div className="container">
+      <div className="container mt-2">
         <h1>Specifications</h1>
         <div className="row border_bottom pb-2 mt-2">
           <div className="col-md-4">

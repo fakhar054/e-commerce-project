@@ -66,7 +66,7 @@ export default function LoginPage() {
               </button>
               <div className="signup_div mt-2">
                 <p>Don't have Account?</p>
-                <Link href={`/sign-up`}>sing up here</Link>
+                <Link href={`/sign-up`}>sign up here</Link>
               </div>
             </form>
           </div>
