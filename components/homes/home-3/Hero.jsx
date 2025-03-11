@@ -11,10 +11,30 @@ import { BsCart2 } from "react-icons/bs";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 export default function Hero() {
   const [counter, setCounter] = useState(1);
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+
+  // useEffect(() => {
+  //   async function fetchData() {
+  //     try {
+  //       const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+  //       const jsonData = await res.json();
+  //       setData(jsonData);
+  //     } catch (error) {
+  //       console.error("Error fetching data:", error);
+  //     } finally {
+  //       setLoading(false);
+  //     }
+  //   }
+
+  //   fetchData();
+  // }, []);
+
+  // if (loading) return <p>Loading...</p>;
 
   const settings = {
     infinite: true,

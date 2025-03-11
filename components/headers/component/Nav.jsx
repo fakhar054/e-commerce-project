@@ -16,7 +16,7 @@ export default function Nav() {
       <li className="has-dd-menu">
         <Link href={`/all-products`} role="button" aria-haspopup="true">
           Shop
-          {/* <span
+          <span
             data-uc-navbar-parent-icon=""
             className="uc-icon uc-navbar-parent-icon"
           >
@@ -28,11 +28,11 @@ export default function Nav() {
                 points="1 3.5 6 8.5 11 3.5"
               />
             </svg>
-          </span> */}
+          </span>
         </Link>
         {/* uc-navbar-dropdown uc-drop uc-open */}
 
-        {/* <div className={`uc-navbar-dropdown uc-drop w-100`}>
+        <div className={`uc-navbar-dropdown uc-drop w-100`}>
           <div
             className="uc-drop-grid row child-cols g-4 uc-grid uc-grid-stack"
             data-uc-grid=""
@@ -101,7 +101,7 @@ export default function Nav() {
               </div>
             </div>
           </div>
-        </div> */}
+        </div>
       </li>
 
       <li>

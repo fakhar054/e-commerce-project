@@ -86,22 +86,22 @@ export default function profile() {
             <IoLocationOutline />
             <p onClick={handleAddress}>Manage Addresses</p>
           </div>
-          <div
+          {/* <div
             className={`user flex_props ${
               pathname === "/saved-cards" ? "bottom_border" : ""
             }`}
           >
             <IoCardSharp />
             <p onClick={handleCards}>Saved Cards</p>
-          </div>
-          <div
+          </div> */}
+          {/* <div
             className={`user flex_props ${
               pathname === "/notifications" ? "bottom_border" : ""
             }`}
           >
             <IoIosNotificationsOutline />
             <p onClick={handleNotifications}>Notifications</p>
-          </div>
+          </div> */}
           <div
             className={`user flex_props ${
               pathname === "/settings" ? "bottom_border" : ""

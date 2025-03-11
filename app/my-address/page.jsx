@@ -8,8 +8,11 @@ import { TiEdit } from "react-icons/ti";
 import { RiDeleteBin5Line } from "react-icons/ri";
 import Header2 from "@/components/headers/Header2";
 import Footer2 from "@/components/footers/Footer2";
+import { IoClose } from "react-icons/io5";
 
 export default function page() {
+  const [displayForm, setDisplayForm] = useState(false);
+
   const [showForm, setShowForm] = useState(false);
   const closeEditform = () => {
     if (showForm) {
@@ -19,6 +22,14 @@ export default function page() {
 
   const handleEditForm = () => {
     setShowForm(true);
+  };
+
+  const handleForm = () => {
+    setDisplayForm(true);
+  };
+
+  const handleClose = () => {
+    setDisplayForm(false);
   };
 
   useEffect(() => {
@@ -45,7 +56,7 @@ export default function page() {
               <MyProfile />
             </div>
           </div>
-          <div className="col-md-8 second_div">
+          <div className="col-md-8 second_div" onClick={handleForm}>
             <p id="btn" className="mb-3">
               + Add New Address
             </p>
@@ -126,73 +137,76 @@ export default function page() {
             </div>
           </div>
         </div>
+        {displayForm && (
+          <form className="edit_form active">
+            <div className="address_div">
+              <h3>Add a new address</h3>
+              <IoClose className="icon_size" onClick={handleClose} />
+            </div>
+            <div className="mb-3 mt-3">
+              <label>Name</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Name"
+              />
+            </div>
 
-        <form className={`edit_form ${showForm ? "active" : ""}`}>
-          <h3>Add a new address</h3>
+            <div className="mb-3">
+              <label>Mobile Number</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Mobile Number"
+              />
+            </div>
 
-          <div className="mb-3">
-            <label>Name</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter Name"
-            />
-          </div>
+            <div className="mb-3">
+              <label>Flat, House no., Building, Company, Apartment</label>
+              <input type="text" className="form-control" />
+            </div>
 
-          <div className="mb-3">
-            <label>Mobile Number</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter Mobile Number"
-            />
-          </div>
+            <div className="mb-3 select_div">
+              <label>City</label>
+              <select>
+                <option>Select City</option>
+                <option>New York</option>
+                <option>London</option>
+                <option>Karachi</option>
+              </select>
+            </div>
 
-          <div className="mb-3">
-            <label>Flat, House no., Building, Company, Apartment</label>
-            <input type="text" className="form-control" />
-          </div>
+            <div className="mb-3">
+              <label>Pin Code</label>
+              <input
+                type="text"
+                className="form-control"
+                placeholder="Enter Pin Code"
+              />
+            </div>
 
-          <div className="mb-3 select_div">
-            <label>City</label>
-            <select>
-              <option>Select City</option>
-              <option>New York</option>
-              <option>London</option>
-              <option>Karachi</option>
-            </select>
-          </div>
+            <div className="mb-3">
+              <label>State</label>
+              <select className="select_div">
+                <option>Select State</option>
+                <option>Punjab</option>
+                <option>Sindh</option>
+              </select>
+            </div>
 
-          <div className="mb-3">
-            <label>Pin Code</label>
-            <input
-              type="text"
-              className="form-control"
-              placeholder="Enter Pin Code"
-            />
-          </div>
+            <div className="mb-3 form_check">
+              <input type="checkbox" />
+              <label className="form-check-label">
+                Use as my default address
+              </label>
+            </div>
 
-          <div className="mb-3">
-            <label>State</label>
-            <select className="select_div">
-              <option>Select State</option>
-              <option>Punjab</option>
-              <option>Sindh</option>
-            </select>
-          </div>
-
-          <div className="mb-3 form_check">
-            <input type="checkbox" />
-            <label className="form-check-label">
-              Use as my default address
-            </label>
-          </div>
-
-          <div className="btn_div">
-            <button id="cancel">Cancel</button>
-            <button id="add_new">Add New Address</button>
-          </div>
-        </form>
+            <div className="btn_div">
+              <button id="cancel">Cancel</button>
+              <button id="add_new">Add New Address</button>
+            </div>
+          </form>
+        )}
       </div>
       <Footer2 />
     </section>

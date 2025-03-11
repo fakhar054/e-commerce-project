@@ -74,7 +74,7 @@ export default function ShippingAddress() {
                     <span>
                       <RiDeleteBinFill />
                     </span>
-                    Edit
+                    Delete
                   </p>
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function ShippingAddress() {
                     <span>
                       <RiDeleteBinFill />
                     </span>
-                    Edit
+                    Delete
                   </p>
                 </div>
               </div>

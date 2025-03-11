@@ -8,6 +8,11 @@ export default function Dropdown() {
   const [ProductCategories, setProductCategories] = useState(false);
   const [filterbyPrice, setFilterbyPrice] = useState(false);
   const [filterbyColor, setFilterbyColor] = useState(false);
+  const [filterbySize, setFilterbySize] = useState(false);
+
+  const handlebySize = () => {
+    setFilterbySize(!filterbySize);
+  };
 
   const handleProductCategories = () => {
     setProductCategories(!ProductCategories);
@@ -142,11 +147,11 @@ export default function Dropdown() {
             </div>
           </ul>
         )}
-        <div className="heading_icon" onClick={handlebyColor}>
+        <div className="heading_icon" onClick={handlebySize}>
           <h3>Filter by Size</h3>
           <RiArrowDropDownLine className="drop_down_icon" />
         </div>
-        {filterbyColor && (
+        {filterbySize && (
           <ul>
             <div className="color_div d-flex">
               <li>

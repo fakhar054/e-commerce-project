@@ -3,10 +3,15 @@ import React from "react";
 import "./card.css";
 import { IoMdClose } from "react-icons/io";
 import { RiDeleteBin5Fill } from "react-icons/ri";
+import { useRouter } from "next/navigation";
 
 export default function page() {
+  const router = useRouter();
+
   const handlePopup = () => {};
-  const handleCheckout = () => {};
+  const handleCheckout = () => {
+    router.push("/shop-cart");
+  };
 
   return (
     <div>

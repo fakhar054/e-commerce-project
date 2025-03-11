@@ -4,6 +4,7 @@ import "../../public/assets/css/theme/main.css";
 import "./my-wishlist.css";
 import Header2 from "@/components/headers/Header2";
 import Footer2 from "@/components/footers/Footer2";
+import Features from "@/components/Features_div/page";
 
 export default function page() {
   return (
@@ -99,6 +100,9 @@ export default function page() {
                 </div>
               </div>
             </div>
+          </div>
+          <div className="mt-2">
+            <Features />
           </div>
         </div>
       </div>
