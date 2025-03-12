@@ -1,6 +1,6 @@
 "use client";
 import { reviewLogos } from "@/data/brands";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import "./brands.css";
 import "../../../public/assets/css/theme/main.css";
@@ -13,6 +13,9 @@ import "slick-carousel/slick/slick-theme.css";
 export default function Brands() {
   const [counter, setCounter] = useState(1);
 
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
   const settings = {
     infinite: true,
     slidesToShow: 6,
@@ -63,17 +66,41 @@ export default function Brands() {
     { image_src: "/assets/images/common/mobile_img.png", prod_name: "Tablet" },
   ];
 
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://foundation.alphalive.pro/api/front/categories"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const result = await response.json();
+        setData(Array.isArray(result.data) ? result.data : []);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
   return (
     <div className="container mt-4  pb-3 brands">
       <div className="row ">
         <div className="product_list">
           <Slider {...settings}>
-            {products.map((item, index) => {
+            {data.map((item, index) => {
               return (
                 <SingleProduct
                   key={index}
-                  image_src={item.image_src}
-                  prod_name={item.prod_name}
+                  image_src={item.image}
+                  prod_name={item.name}
                 />
               );
             })}

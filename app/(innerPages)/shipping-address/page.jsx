@@ -5,13 +5,14 @@ import "./shipping_address.css";
 import "../../../public/assets/css/theme/main.css";
 import SmallForm from "@/components/SmallForm/SmallForm";
 import { MdOutlineRateReview } from "react-icons/md";
-import { MdPayment } from "react-icons/md";
-import { IoIosHome } from "react-icons/io";
 import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBinFill } from "react-icons/ri";
 import Header2 from "@/components/headers/Header2";
 import Footer2 from "@/components/footers/Footer2";
+import { BsCreditCard2Back } from "react-icons/bs";
+
 import "./shipping.css";
+import { CiHome } from "react-icons/ci";
 
 export default function ShippingAddress() {
   const router = useRouter();
@@ -33,14 +34,14 @@ export default function ShippingAddress() {
           <div className="col-lg-8">
             <div className="icons_parent_div mb-3">
               <div className="icons_div mt-3 mb-5">
-                <div className="icon">
-                  <MdOutlineRateReview />
+                <div className="icon active">
+                  <CiHome className="icon_size_shiping " />
                 </div>
                 <div className="icon">
-                  <MdPayment />
+                  <BsCreditCard2Back className="icon_size_shiping " />
                 </div>
                 <div className="icon">
-                  <IoIosHome />
+                  <MdOutlineRateReview className="icon_size_shiping" />
                 </div>
               </div>
               <hr />
@@ -100,6 +101,9 @@ export default function ShippingAddress() {
                     Delete
                   </p>
                 </div>
+              </div>
+              <div className="button_div mt-2">
+                <button>Deliver Here</button>
               </div>
             </div>
 

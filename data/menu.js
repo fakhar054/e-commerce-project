@@ -232,283 +232,155 @@ export const menuItems2 = [
 export const pagesData = [
   {
     id: 1,
-    header: "Main Pages",
+    header: "Men",
     items: [
       {
-        href: "/",
-        label: "Home 01",
+        href: "/page-features",
+        label: "T-Shirt",
       },
       {
-        href: "/home-2",
-        label: "Home 02",
+        href: "/page-pricing",
+        label: "Casual Shirts",
       },
       {
-        href: "/home-3",
-        label: "Home 03",
+        href: "/page-integrations",
+        label: "Formal Shirts",
       },
       {
-        href: "/home-4",
-        label: "Home 04",
-        badge: {
-          text: "New",
-          className: "text-primary",
-        },
+        href: "/page-about",
+        label: "Jackets",
       },
       {
-        href: "/home-5",
-        label: "Home 05",
-        badge: {
-          text: "New",
-          className: "text-primary",
-        },
-      },
-      {
-        href: "/home-6",
-        label: "Home 06",
-        badge: {
-          text: "New",
-          className: "text-primary",
-        },
-      },
-      {
-        href: "/rtl",
-        label: "Home RTL",
-        badge: {
-          text: "New",
-          className: "text-primary",
-        },
-      },
-      {
-        href: "#",
-        label: "Home 07",
-        badge: {
-          text: "Soon",
-          className: "text-gray-400",
-        },
-      },
-      {
-        href: "#",
-        label: "Home 08",
-        badge: {
-          text: "Soon",
-          className: "text-gray-400",
-        },
-      },
-      {
-        href: "#",
-        label: "Home 09",
-        badge: {
-          text: "Soon",
-          className: "text-gray-400",
-        },
-      },
-      {
-        href: "#",
-        label: "Home 10",
-        badge: {
-          text: "Soon",
-          className: "text-gray-400",
-        },
+        href: "/page-career",
+        label: "Blazer & Coats",
       },
     ],
   },
   {
     id: 2,
-    header: "Inner Pages",
+    header: "Women",
     items: [
       {
         href: "/page-features",
-        label: "Features",
+        label: "T-Shirt",
       },
       {
         href: "/page-pricing",
-        label: "Pricing",
+        label: "Casual Shirts",
       },
       {
         href: "/page-integrations",
-        label: "Integrations",
+        label: "Formal Shirts",
       },
       {
         href: "/page-about",
-        label: "About",
+        label: "Jackets",
       },
       {
         href: "/page-career",
-        label: "Career",
-      },
-      {
-        href: "/page-team",
-        label: "Team",
-        badge: {
-          text: "New",
-          className: "text-primary",
-        },
-      },
-      {
-        href: "/page-career-detail/2",
-        label: "Job details",
-      },
-      {
-        href: "/page-contact",
-        label: "Contact",
-      },
-      {
-        href: "/page-contact-2",
-        label: "Contact v2",
-      },
-      {
-        href: "#",
-        label: "Services",
-        badge: {
-          text: "Soon",
-          className: "text-gray-400",
-        },
+        label: "Blazer & Coats",
       },
     ],
   },
   {
     id: 3,
-    header: "CMS Pages",
+    header: "Footwear",
     items: [
       {
-        href: "/blog",
-        label: "Modern",
+        href: "/page-features",
+        label: "T-Shirt",
       },
       {
-        href: "/blog-classic",
-        label: "Classic",
+        href: "/page-pricing",
+        label: "Casual Shirts",
       },
       {
-        href: "/blog-2cols",
-        label: "Grid 2 cols",
+        href: "/page-integrations",
+        label: "Formal Shirts",
       },
       {
-        href: "/blog-3cols",
-        label: "Grid 3 cols",
+        href: "/page-about",
+        label: "Jackets",
       },
       {
-        href: "/blog-4cols",
-        label: "Grid 4 cols",
-      },
-      // {
-      //   href: "/blog-category/Stratgy",
-      //   label: "Category",
-      // },
-      {
-        href: "/blog-author/Amir Khan",
-        label: "Author",
-      },
-      {
-        href: "/blog-details/1",
-        label: "Blog single",
-      },
-      {
-        href: "/blog-details-2/2",
-        label: "Blog single v2",
-      },
-      {
-        href: "/blog-details-3/2",
-        label: "Blog single v3",
+        href: "/page-career",
+        label: "Blazer & Coats",
       },
     ],
   },
   {
     id: 4,
-    header: "Shop Pages",
+    header: "Kids",
     items: [
       {
-        href: "/shop",
-        label: "Grid 4 cols",
+        href: "/page-features",
+        label: "T-Shirt",
       },
       {
-        href: "/shop-3",
-        label: "Grid 3 cols",
+        href: "/page-pricing",
+        label: "Casual Shirts",
       },
       {
-        href: "/shop-2",
-        label: "Grid 2 cols",
+        href: "/page-integrations",
+        label: "Formal Shirts",
       },
       {
-        href: "/all-products",
-        label: "Grid with sidebar",
-        badge: {
-          text: "New",
-          className: "text-primary",
-        },
+        href: "/page-about",
+        label: "Jackets",
       },
       {
-        href: "/shop-product-detail/2",
-        label: "Product detail",
+        href: "/page-career",
+        label: "Blazer & Coats",
       },
       {
-        href: "/shop-product-detail-2/2",
-        label: "Product detail v2",
+        href: "/page-career",
+        label: "Kurtas",
       },
       {
-        href: "/shop-cart",
-        label: "Cart",
-      },
-      {
-        href: "/shop-cart-2",
-        label: "Cart v2",
-      },
-      {
-        href: "/shop-checkout",
-        label: "Checkout",
-      },
-      {
-        href: "/shop-checkout-2",
-        label: "Checkout v2",
-      },
-      {
-        href: "/shop-order",
-        label: "Order confirmation",
+        href: "/page-career",
+        label: "Sherwani",
       },
     ],
   },
   {
     id: 5,
-    header: "Other pages",
+    header: "Indian & Festive Wear",
     items: [
       {
-        href: "/sign-in",
-        label: "Sign in",
+        href: "/page-career",
+        label: "Kurtas",
       },
       {
-        href: "/sign-in-2",
-        label: "Sign in v2",
+        href: "/page-career",
+        label: "Sherwani",
+      },
+    ],
+  },
+  {
+    id: 6,
+    header: "Western Wear",
+    items: [
+      {
+        href: "/page-career",
+        label: "Kurtas",
       },
       {
-        href: "/sign-up",
-        label: "Sign up",
+        href: "/page-career",
+        label: "Sherwani",
+      },
+    ],
+  },
+  {
+    id: 6,
+    header: "Product Features",
+    items: [
+      {
+        href: "/page-career",
+        label: "Kurtas",
       },
       {
-        href: "/sign-up-2",
-        label: "Sign up v2",
-      },
-      {
-        href: "/reset-password",
-        label: "Reset password",
-      },
-      {
-        href: "/reset-password-2",
-        label: "Reset password v2",
-      },
-      {
-        href: "/page-not-found",
-        label: "404",
-      },
-      {
-        href: "/coming-soon",
-        label: "Coming Soon",
-      },
-      {
-        href: "/page-terms",
-        label: "Terms of service",
-      },
-      {
-        href: "/page-privacy",
-        label: "Privacy policy",
+        href: "/page-career",
+        label: "Sherwani",
       },
     ],
   },

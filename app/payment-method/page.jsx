@@ -13,6 +13,9 @@ import { RiDeleteBinFill } from "react-icons/ri";
 import Header2 from "@/components/headers/Header2";
 import Footer2 from "@/components/footers/Footer2";
 
+import { CiHome } from "react-icons/ci";
+import { BsCreditCard2Back } from "react-icons/bs";
+
 export default function PaymentMethod() {
   const router = useRouter();
 
@@ -40,14 +43,14 @@ export default function PaymentMethod() {
                 </div>
                 <div className="icons_parent_div mb-3">
                   <div className="icons_div mt-3 mb-5">
-                    <div className="icon">
-                      <MdOutlineRateReview />
+                    <div className="icon active">
+                      <CiHome className="icon_size_shiping " />
+                    </div>
+                    <div className="icon active">
+                      <BsCreditCard2Back className="icon_size_shiping" />
                     </div>
                     <div className="icon">
-                      <MdPayment />
-                    </div>
-                    <div className="icon">
-                      <IoIosHome />
+                      <MdOutlineRateReview className="icon_size_shiping" />
                     </div>
                   </div>
                   <hr />

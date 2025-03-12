@@ -78,7 +78,7 @@ input[type="checkbox"] {
 
 /* Style checkbox when checked */
 input[type="checkbox"]:checked {
-  background-color: black;
+  background-color: black !important;
   border-color: black;
 }
 

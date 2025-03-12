@@ -1,9 +1,50 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import "./login.css";
 import "../../public/assets/css/theme/main.css";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 export default function LoginPage() {
+  const router = useRouter();
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleChange = (e) => {
+    const { id, value } = e.target;
+    if (id === "email") setEmail(value);
+    if (id === "password") setPassword(value);
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      const res = await fetch(
+        "https://foundation.alphalive.pro/api/user/login",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email, password }),
+        }
+      );
+
+      console.log(email, password);
+      const data = await res.json();
+      console.log("API Response:", data);
+
+      if (res.ok && data.data.token) {
+        localStorage.setItem("token", data.data.token);
+        alert("Login successful");
+        router.push("/");
+      } else {
+        alert(data.message || "Invalid credentials");
+      }
+    } catch (error) {
+      console.error("Login error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <section className="login" id="login">
       <div className="container set_bg ">
@@ -19,7 +60,7 @@ export default function LoginPage() {
           <div className="col-lg-5 p-5">
             <h2>Welcome</h2>
             <p className="text-muted">Please login here</p>
-            <form className="mt-3">
+            <form className="mt-3" onSubmit={handleSubmit}>
               <div className="mb-3">
                 <label htmlFor="email" className="form-label">
                   Email Address
@@ -28,6 +69,8 @@ export default function LoginPage() {
                   type="email"
                   className="form-control large border_radius"
                   id="email"
+                  onChange={handleChange}
+                  value={email}
                   placeholder="Enter your email"
                   required
                 />
@@ -42,6 +85,8 @@ export default function LoginPage() {
                   className="form-control large border_radius"
                   id="password"
                   placeholder="Enter your password"
+                  onChange={handleChange}
+                  value={password}
                   required
                 />
               </div>

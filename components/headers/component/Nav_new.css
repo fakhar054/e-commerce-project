@@ -1,0 +1,18 @@
+li.uc-nav-header {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 20px;
+
+  /* color: red !important; */
+}
+li a.inActiveMenu {
+  color: #626665 !important;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 14px;
+}
+.custom_grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}

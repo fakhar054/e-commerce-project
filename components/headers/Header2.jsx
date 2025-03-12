@@ -18,8 +18,23 @@ export default function Header2() {
   const [showSearch, setShowSearch] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
 
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
   const togglePopup = () => {
     setShowPopup(!showPopup);
+  };
+
+  const handleAuth = () => {
+    if (isLoggedIn) {
+      localStorage.removeItem("token");
+      setIsLoggedIn(false);
+    }
   };
 
   const toggleSearch = () => {
@@ -121,9 +136,13 @@ export default function Header2() {
                   </div>
                 </div>
 
-                <div className="d-none lg:d-block">
+                <div className="d-none lg:d-block" onClick={handleAuth}>
                   <Link className="text-none fw-medium " href={`/login`}>
-                    <span className="btn_black">Log in</span>
+                    {/* href={`/login`} */}
+                    <span className="btn_black">
+                      {/* Log in */}
+                      {isLoggedIn ? "Logout" : "Login"}
+                    </span>
                   </Link>
                 </div>
 

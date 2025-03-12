@@ -10,6 +10,13 @@ body {
   font-family: "Jost", serif;
   position: relative;
 }
+.active {
+  background-color: black !important;
+  color: white;
+}
+.icon_size_shiping {
+  font-size: 18px;
+}
 .heading_div {
   width: 100%;
   position: fixed;

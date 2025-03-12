@@ -1,8 +1,28 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 export default function SignIn() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      setIsLoggedIn(true);
+    }
+  }, []);
+
+  const handleAuth = () => {
+    if (isLoggedIn) {
+      localStorage.removeItem("token");
+      setIsLoggedIn(false);
+    } else {
+      localStorage.setItem("token", "dummy_token"); // Simulating Login
+      setIsLoggedIn(true);
+    }
+  };
+
   return (
     <div
       id="sign-in"
@@ -237,10 +257,12 @@ export default function SignIn() {
                             Forgot password
                           </Link>
                         </div>
+
                         <button
                           className="btn btn-primary btn-md text-white mt-2"
                           type="submit"
                         >
+                          {/* {isLoggedIn ? "Logout" : "Login"} */}
                           Log in
                         </button>
                       </form>

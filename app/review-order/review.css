@@ -4,6 +4,13 @@ body {
   font-family: "Jost", serif;
 }
 
+.active {
+  background-color: black !important;
+  color: white;
+}
+.icon_size_shiping {
+  font-size: 18px;
+}
 .page_address {
   font-family: "Jost", serif;
   position: relative !important;

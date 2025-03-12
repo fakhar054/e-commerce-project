@@ -10,6 +10,9 @@ import { FaRegEdit } from "react-icons/fa";
 import { RiDeleteBinFill } from "react-icons/ri";
 import { IoMdClose } from "react-icons/io";
 
+import { CiHome } from "react-icons/ci";
+import { BsCreditCard2Back } from "react-icons/bs";
+
 import "./review.css";
 import Header2 from "@/components/headers/Header2";
 import Footer2 from "@/components/footers/Footer2";
@@ -59,14 +62,14 @@ export default function ReviewOrder() {
             <div className="col-lg-8">
               <div className="icons_parent_div mb-3">
                 <div className="icons_div mt-3 mb-5">
-                  <div className="icon">
-                    <MdOutlineRateReview />
+                  <div className="icon active">
+                    <CiHome className="icon_size_shiping " />
                   </div>
-                  <div className="icon">
-                    <MdPayment />
+                  <div className="icon active">
+                    <BsCreditCard2Back className="icon_size_shiping" />
                   </div>
-                  <div className="icon">
-                    <IoIosHome />
+                  <div className="icon active">
+                    <MdOutlineRateReview className="icon_size_shiping" />
                   </div>
                 </div>
                 <hr />

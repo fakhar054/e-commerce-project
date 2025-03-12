@@ -5,14 +5,43 @@ import { FaRegHeart, FaHeart } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import CardComponent from "../CardComponent/page";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TbFilters } from "react-icons/tb";
 import { FaAngleDown } from "react-icons/fa";
 
 export default function AllProduct() {
   const [showPopup, setShowPopup] = useState(false);
-  const [favorites, setFavorites] = useState(Array(6).fill(false));
+  const [favorite, setFavorite] = useState(false);
   const router = useRouter();
+
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch(
+          "https://foundation.alphalive.pro/api/front/products"
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch data");
+        }
+        const result = await response.json();
+        setData(result.data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+  // console.log("data", data);
 
   const togglePopup = () => {
     setShowPopup(!showPopup);
@@ -22,12 +51,8 @@ export default function AllProduct() {
     router.push("/shop-product-detail/10812");
   };
 
-  const toggleFavorite = (index) => {
-    setFavorites((prev) => {
-      const newFavorites = [...prev];
-      newFavorites[index] = !newFavorites[index];
-      return newFavorites;
-    });
+  const toggleFavorite = () => {
+    setFavorite(!favorite);
   };
 
   return (
@@ -47,34 +72,28 @@ export default function AllProduct() {
         </div>
       </div>
       <div className="all_product_parent_div">
-        {[...Array(6)].map((_, index) => (
-          <section
-            key={index}
-            id="AllProduct"
-            className="AllProduct pro_item mb-3"
-          >
+        {data.map((product) => (
+          <section id="AllProduct" className="AllProduct pro_item mb-3">
             <div className="img_div">
               <img
                 src="/assets/images/products/productImg.png"
                 onClick={handleNavigation}
                 alt="im"
               />
-              {favorites[index] ? (
-                <FaHeart
-                  className="icon_size icon_wishlist"
-                  onClick={() => toggleFavorite(index)}
-                />
+              {favorite ? (
+                <FaHeart className="icon_size" onClick={toggleFavorite} />
               ) : (
-                <FaRegHeart
-                  className="icon_size "
-                  onClick={() => toggleFavorite(index)}
-                />
+                <FaRegHeart className="icon_size" onClick={toggleFavorite} />
               )}
-              <h2 className="mt-1">Allen Solly</h2>
+
+              <h2 className="mt-1">
+                {product.title.split(" ").slice(0, 10).join(" ")}
+                {product.title.split(" ").length > 10 && "..."}
+              </h2>
               <p className="detail">Women Textured Handheld Bag</p>
               <div className="price_div">
-                <p className="price">$80.00</p>
-                <p className="old_price">$100.00</p>
+                <p className="price">{`$${product.current_price}`}</p>
+                <p className="old_price">{`$${product.previous_price}`}</p>
               </div>
               <div className="btn_div" onClick={togglePopup}>
                 <button className="cart mt-1">Add to cart</button>

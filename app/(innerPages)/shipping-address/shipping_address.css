@@ -96,6 +96,13 @@ input::placeholder {
   align-items: center;
   gap: 10px;
 }
+.button_div button {
+  font-size: 20px;
+  font-weight: 700;
+  font-family: "Jost" !important;
+  padding: 10px 40px;
+  text-align: center;
+}
 .page_address button {
   max-width: 300px;
   height: 52px;
@@ -138,7 +145,42 @@ input::placeholder {
   flex-wrap: wrap;
   gap: 40px;
   align-items: center;
+  padding-bottom: 20px;
 }
+.icon_size_shiping {
+  font-size: 18px;
+}
+.active {
+  background-color: black;
+  color: white;
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  width: 20px;
+  height: 20px !important;
+  background: white;
+  border-radius: 3px;
+  cursor: pointer;
+  position: relative;
+}
+
+input[type="checkbox"]::before {
+  content: "✔";
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  display: none;
+}
+
+input[type="checkbox"]:checked {
+  background: black;
+}
+
+input[type="checkbox"]:checked::before {
+  display: block;
+}
+
 .box_div .btn_div {
   display: flex;
   align-items: center;
@@ -150,7 +192,7 @@ input::placeholder {
   margin-top: 0 !important;
 }
 .max_height {
-  max-height: 14px !important;
+  max-height: 20px !important;
 }
 
 @media screen and (max-width: 850px) {

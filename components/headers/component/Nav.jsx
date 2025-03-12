@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { pagesData } from "@/data/menu";
 import { usePathname } from "next/navigation";
+import "./Nav_new.css";
 
 export default function Nav() {
   const pathname = usePathname();
@@ -38,7 +39,8 @@ export default function Nav() {
             data-uc-grid=""
           >
             <div>
-              <div className="uc-drop-grid row child-cols g-4 uc-grid uc-grid-stack">
+              {/* <div className="uc-drop-grid row child-cols g-4 uc-grid uc-grid-stack"> */}
+              <div className="custom_grid">
                 {pagesData.map((section, index) => (
                   <div key={index}>
                     <ul className="uc-nav uc-navbar-dropdown-nav">
@@ -83,7 +85,7 @@ export default function Nav() {
                 ))}
               </div>
             </div>
-            <div className="col-3">
+            {/* <div className="col-3">
               <div className="panel w-100 overflow-hidden">
                 <div className="ratio ratio-3x4 overflow-hidden rounded">
                   <Image
@@ -99,7 +101,7 @@ export default function Nav() {
                   ></a>
                 </div>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </li>
