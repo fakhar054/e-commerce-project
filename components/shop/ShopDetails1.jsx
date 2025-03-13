@@ -1,17 +1,18 @@
 "use client";
 import { useRouter } from "next/navigation";
-
 import FeaturedProducts from "./FeaturedProducts";
 import "./shopDetails1.css";
 import Reviews from "./Reviews";
 import Link from "next/link";
 import ReviewForm from "./ReviewForm";
 import ProductSlide from "./ProductSlide";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useContextElement } from "@/context/Context";
-import { FaPlus } from "react-icons/fa6";
-import { FaMinus } from "react-icons/fa6";
+import { FiPlus } from "react-icons/fi";
+
 import { CiHeart } from "react-icons/ci";
+import { LuMinus } from "react-icons/lu";
+
 import { LiaStarSolid } from "react-icons/lia";
 import { CiStar } from "react-icons/ci";
 import { RiDeleteBin5Fill } from "react-icons/ri";
@@ -20,7 +21,28 @@ import ReviewSection from "../ReviewSection/ReviewSection";
 import Specifications from "../Specifications/Specifications";
 
 export default function ShopDetails1({ product }) {
+  const [data, setData] = useState();
   const router = useRouter();
+
+  //fetching product details
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const res = await fetch(
+          "https://foundation.alphalive.pro/api/front/product/95/details"
+        );
+        const result = await res.json();
+        console.log("The result of details api", result);
+        console.log("The result of data ", result.data);
+
+        setData(result.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
+    fetchData();
+  }, []);
 
   const [isVisible, setIsVisible] = useState(false);
   const [bodyColor, setBodyColor] = useState(false);
@@ -169,7 +191,7 @@ export default function ShopDetails1({ product }) {
                 <div className="product-actions hstack gap-1 xl:mt-2">
                   {isAddedToCartProducts(product.id) ? (
                     <div className="quantity_box_div">
-                      <FaMinus
+                      <LuMinus
                         className="quantity_icon"
                         onClick={() => handleDecrease(product.id)}
                       />
@@ -192,7 +214,7 @@ export default function ShopDetails1({ product }) {
                         }
                         title="Qty"
                       />
-                      <FaPlus
+                      <FiPlus
                         className="quantity_icon"
                         onClick={() => handleIncrease(product.id)}
                       />

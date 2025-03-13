@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import "./all-products.css";
 import "../../public/assets/css/theme/main.css";
@@ -6,6 +7,7 @@ import Dropdown from "@/components/dropdown/Dropdown";
 import Header2 from "@/components/headers/Header2";
 import Footer2 from "@/components/footers/Footer2";
 import Features from "@/components/Features_div/page";
+import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export default function page() {
   return (

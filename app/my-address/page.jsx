@@ -11,7 +11,7 @@ import Footer2 from "@/components/footers/Footer2";
 import { IoClose } from "react-icons/io5";
 
 export default function page() {
-  const [displayForm, setDisplayForm] = useState(false);
+  // const [displayForm, setDisplayForm] = useState(false);
 
   const [showForm, setShowForm] = useState(false);
   const closeEditform = () => {
@@ -29,7 +29,7 @@ export default function page() {
   };
 
   const handleClose = () => {
-    setDisplayForm(false);
+    setShowForm(false);
   };
 
   useEffect(() => {
@@ -137,7 +137,7 @@ export default function page() {
             </div>
           </div>
         </div>
-        {displayForm && (
+        {showForm && (
           <form className="edit_form active">
             <div className="address_div">
               <h3>Add a new address</h3>
@@ -195,8 +195,8 @@ export default function page() {
             </div>
 
             <div className="mb-3 form_check">
-              <input type="checkbox" />
-              <label className="form-check-label">
+              <input type="checkbox" id="check_box" />
+              <label className="form-check-label" htmlFor="check_box">
                 Use as my default address
               </label>
             </div>

@@ -6,7 +6,7 @@ export const menuItems = [
   },
   {
     id: 2,
-    href: "/Shop",
+    href: "/all-products",
     label: "Shop",
   },
   {

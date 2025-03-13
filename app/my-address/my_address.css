@@ -108,7 +108,6 @@ p#btn {
 }
 .my_address .edit_form {
   max-width: 418px;
-  border: 1px solid black;
   padding: 14px 20px;
   font-family: "Jost" !important ;
   position: absolute;
