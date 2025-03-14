@@ -1,5 +1,5 @@
 "use client";
-import { useRouter } from "next/navigation";
+import { useRouter, useParams } from "next/navigation";
 import FeaturedProducts from "./FeaturedProducts";
 import "./shopDetails1.css";
 import Reviews from "./Reviews";
@@ -21,19 +21,23 @@ import ReviewSection from "../ReviewSection/ReviewSection";
 import Specifications from "../Specifications/Specifications";
 
 export default function ShopDetails1({ product }) {
+  console.log("product Review Shop details", product);
+
   const [data, setData] = useState();
   const router = useRouter();
+
+  const { id } = useParams();
 
   //fetching product details
   useEffect(() => {
     const fetchData = async () => {
       try {
         const res = await fetch(
-          "https://foundation.alphalive.pro/api/front/product/95/details"
+          `https://foundation.alphalive.pro/api/front/product/${id}/details`
         );
         const result = await res.json();
         console.log("The result of details api", result);
-        console.log("The result of data ", result.data);
+        // console.log("The result of data ", result.data);
 
         setData(result.data);
       } catch (error) {
@@ -107,41 +111,36 @@ export default function ShopDetails1({ product }) {
         <header className="product-header panel">
           <div className="row child-cols-12 lg:child-cols-6 gy-4 gx-4 md:gx-6 xl:gx-8">
             <div>
-              <ProductSlide />
+              <ProductSlide data={data} />
             </div>
             <div>
               <div
                 className="product-details sticky-element panel vstack gap-1 xl:gap-2 "
                 data-uc-sticky="bottom: true; offset: 40;"
               >
-                <div className="flex_div">
-                  <h1 className="prod_head">{product.name}</h1>
+                <div className="flex_div ">
+                  <h1 className="pro_details">{data?.title}</h1>
                   <p id="stock">In Stock</p>
                 </div>
-                <p id="prod_name">Girls Pink Moana Printed Dress</p>
+                <p id="prod_name">{data?.title}</p>
 
                 <div className="product-rating hstack gap-1">
                   <ul
                     className="nav-x gap-0 text-gray-100 dark:text-gray-700"
                     title="Average 4 out of 5"
                   >
-                    {[...Array(product.rating)].map((elm, i) => (
-                      <li key={i}>
-                        <i
-                          className="icon fs-6 lg:fs-5 unicon-star-filled text-yellow"
-                          id="stars"
-                        />
-                      </li>
-                    ))}
-                    {[...Array(5 - product.rating)].map((elm, i) => (
-                      <li key={i}>
-                        <i className="icon fs-6 lg:fs-5 unicon-star-filled" />
-                      </li>
-                    ))}
+                    {/* Debugging: Show rating value */}
+                    {[...Array(Number(data?.reviews?.[0]?.rating) || 0)].map(
+                      (_, i) => (
+                        <li key={i}>
+                          <i className="  unicon-star-filled yellow_star" />
+                        </li>
+                      )
+                    )}
                   </ul>
 
                   <span className="hstack gap-narrow fs-7 opacity-60 reviews">
-                    {product.rating}
+                    {Number(data?.rating)}
                     <span className="d-none sm:d-inline-block reviews">
                       (100 Reviews)
                     </span>
@@ -150,13 +149,10 @@ export default function ShopDetails1({ product }) {
 
                 <div className="hstack justify-between items-center gap-2">
                   <div className="product-price hstack gap-1 fs-5 xl:fs-4">
-                    <span className="price">${product.price.toFixed(2)}</span>
+                    <span className="price">${data?.current_price}</span>
 
                     <span className="price-old text-line-through opacity-40">
-                      $
-                      {product.oldPrice
-                        ? product.oldPrice.toFixed(2)
-                        : (product.price + 20).toFixed(2)}
+                      ${data?.previous_price}
                     </span>
                   </div>
                 </div>
@@ -302,24 +298,12 @@ export default function ShopDetails1({ product }) {
         </div>
         <div className="first_tab mt-3 mb-3">
           <p className="tab_heading">Description</p>
-          <p className="details_p">
-            Consetetur sadipscing elitr, syosma vero eos et accusam et justo
-            takimata sit amet sed diam nonumy eirmod tempor invidunt ut labore
-            et dolore magna aliquyam erat, sed diam voluptua. Ut enim ad minim
-            veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex
-            ea commodo consequat. Duis aute irure dolor in reprehenderit in
-            voluptate velit esse cillum dolore eu fugiat nulla pariatur, sed do
-            eiusmod. Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Aliquid iusto dolores laudantium commodi ut ullam id, numquam
-            repellat quo maiores excepturi cum atque consequuntur alias sunt,
-            dignissimos architecto odio unde! Accusamus odio soluta nostrum nemo
-            esse explicabo ab eos sed perspiciatis possimus.
-          </p>
+          <p className="details_p">{data?.details}</p>
         </div>
 
         <Specifications />
 
-        <ReviewSection />
+        <ReviewSection product_review={product} />
         <div className="add_review_form mt-2">
           <ReviewForm />
         </div>

@@ -20,12 +20,18 @@
   background-color: white;
   position: relative;
 }
-.single_product h1.prod_head {
+.yellow_star {
+  color: #ffcc00 !important;
+  font-size: 30px !important;
+  margin-left: 3px !important;
+  margin-right: 3px !important;
+}
+h1.pro_details {
   font-weight: 700 !important;
   font-family: "Jost", serif !important;
   font-size: 40px;
   margin-bottom: 0 !important;
-  /* height: 37px; */
+  width: 80%;
 }
 .single_product .flex_div {
   display: flex;

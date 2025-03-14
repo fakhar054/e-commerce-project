@@ -51,7 +51,11 @@ const imageItems = [
     alt: "Disney Toys",
   },
 ];
-export default function ProductSlide() {
+export default function ProductSlide({ data }) {
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+  // console.log("response in imageghhghgygugyygguyhs ", data.images);
   // store thumbs swiper instance
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   return (
@@ -69,10 +73,10 @@ export default function ProductSlide() {
               className="swiper swiper-main h-100"
               spaceBetween={8}
             >
-              {imageItems.map((item, index) => (
+              {/* {imageItems.map((item, index) => (
                 <SwiperSlide className="swiper-slide" key={index}>
                   <Item
-                    original={item.src}
+                    original={data?.thumbnail}
                     thumbnail={item.src}
                     width={1280}
                     height={1707}
@@ -99,6 +103,38 @@ export default function ProductSlide() {
                     )}
                   </Item>
                 </SwiperSlide>
+              ))} */}
+
+              {data?.images?.map((img, index) => (
+                <SwiperSlide className="swiper-slide" key={index}>
+                  <Item
+                    original={data?.thumbnail} // Keeping the original image
+                    thumbnail={img.image} // Use the image from data.images
+                    width={1280}
+                    height={1207}
+                    key={index}
+                  >
+                    {({ ref, open }) => (
+                      <div className="product type-product">
+                        <figure className="featured-image m-0 rounded ratio ratio-3x4 uc-transition-toggle overflow-hidden">
+                          <Image
+                            className="media-cover image uc-transition-scale-up uc-transition-opaque"
+                            src={img.image} // ✅ Load image from data.images
+                            width={1280}
+                            height={1207}
+                            alt={`Image ${index + 1}`}
+                            ref={ref}
+                          />
+                          <a
+                            onClick={open}
+                            className="position-cover"
+                            data-caption={`Image ${index + 1}`}
+                          ></a>
+                        </figure>
+                      </div>
+                    )}
+                  </Item>
+                </SwiperSlide>
               ))}
 
               {/* Add Arrows */}
@@ -119,13 +155,14 @@ export default function ProductSlide() {
             spaceBetween={8}
             slidesPerView={5}
           >
-            {imageSources.map((src, index) => (
+            {/* {imageSources.map((src, index) => ( */}
+            {data?.images?.map((img, index) => (
               <SwiperSlide className="swiper-slide" key={index}>
                 <div className="product type-product h-100">
                   <figure className="featured-image m-0 rounded ratio ratio-1x1 uc-transition-toggle overflow-hidden">
                     <Image
                       className="media-cover image uc-transition-scale-up uc-transition-opaque"
-                      src={src}
+                      src={img?.image}
                       width={1280}
                       height={1707}
                       alt={`Disney Toys ${index + 1}`}
@@ -133,7 +170,8 @@ export default function ProductSlide() {
                   </figure>
                 </div>
               </SwiperSlide>
-            ))}
+            ))}{" "}
+            {/* // ))} */}
           </Swiper>
         </div>
       </div>

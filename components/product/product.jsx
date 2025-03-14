@@ -12,19 +12,24 @@ import useAllProducts from "../../app/all-products/All_ProductResponse_Api";
 
 export default function AllProduct() {
   const { products, loading, error } = useAllProducts();
+
   const [showPopup, setShowPopup] = useState(false);
   const [favorite, setFavorite] = useState(false);
+  const router = useRouter();
+
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   const totalPages = Math.ceil(products.length / itemsPerPage);
 
-  const router = useRouter();
+  if (loading) {
+    return <p>Loading products...</p>;
+  }
 
   const togglePopup = () => setShowPopup(!showPopup);
   const toggleFavorite = () => setFavorite(!favorite);
 
-  const handleNavigation = () => {
-    router.push("/shop-product-detail/10812");
+  const handleNavigation = (id) => {
+    router.push(`/shop-product-detail/${id}`);
   };
 
   // Pagination functions
@@ -80,7 +85,7 @@ export default function AllProduct() {
                     ? Single_Product.thumbnail
                     : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1zwhySGCEBxRRFYIcQgvOLOpRGqrT3d7Qng&s"
                 }
-                onClick={handleNavigation}
+                onClick={() => handleNavigation(Single_Product.id)}
                 alt="product"
               />
               {favorite ? (
@@ -111,31 +116,6 @@ export default function AllProduct() {
         ))}
       </div>
 
-      {/* Pagination */}
-      {/* <div className="pagnation mt-5 mb-5">
-        <FaArrowLeft
-          className={`icon_prop ${currentPage === 1 ? "disabled" : ""}`}
-          onClick={prevPage}
-        />
-        {Array.from({ length: totalPages }, (_, i) => (
-          <p
-            key={i}
-            className={currentPage === i + 1 ? "active" : ""}
-            onClick={() => goToPage(i + 1)}
-          >
-            {i + 1}
-          </p>
-        ))}
-        <FaArrowRight
-          className={`icon_prop ${
-            currentPage === totalPages ? "disabled" : ""
-          }`}
-          onClick={nextPage}
-        />
-      </div> */}
-
-      {/* Pagination */}
-      {/* Pagination */}
       <div className="pagination mt-5 mb-5">
         <FaArrowLeft
           className={`icon_prop ${currentPage === 1 ? "disabled" : ""}`}

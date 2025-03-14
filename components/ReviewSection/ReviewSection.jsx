@@ -6,7 +6,8 @@ import { FaStar } from "react-icons/fa6";
 import ReviewFilterDropdown from "../ReviewFilterDropdown/ReviewFilter";
 import Comments from "../Comments/Comments";
 
-export default function ReviewSection() {
+export default function ReviewSection({ product_review }) {
+  // console.log("product Review", product_review);
   return (
     <section className="review_sec mb-3 pb-3 mt-5">
       <div className={`container max-w-xl`}>
@@ -68,7 +69,7 @@ export default function ReviewSection() {
           <div className="col-lg-4">
             <h3>Overall rating</h3>
             <div className="parent_flex_div">
-              <h1>4.8</h1>
+              <h1>{product_review.rating}skjskd</h1>
               <div className="stars_review">
                 <div className="stars_div">
                   <FaStar className="star_icon" />

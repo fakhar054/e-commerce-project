@@ -15,6 +15,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "assets.led-italia.it",
       },
+      {
+        protocol: "https",
+        hostname: "foundation.alphalive.pro",
+      },
     ],
   },
   async rewrites() {
