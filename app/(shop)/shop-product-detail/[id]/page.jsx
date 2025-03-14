@@ -15,6 +15,8 @@ export const metadata = {
 export default function ShopDetailsPage1({ params }) {
   const id = params.id;
   const product = products.filter((elm) => elm.id == id)[0] || products[0];
+
+  
   return (
     <>
       <div

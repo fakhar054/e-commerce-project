@@ -3,6 +3,22 @@
   font-family: "Jost" !important;
   position: relative;
 }
+.product_parent_div .img_div {
+  position: relative;
+}
+.img_div .delte_icon {
+  font-size: 25px;
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  /* display: none; */
+  visibility: hidden;
+  transition: 0.3s ease-in-out, 0.3s ease-in-out;
+}
+.img_div:hover .delte_icon {
+  /* display: block; */
+  visibility: visible;
+}
 .heading_div {
   width: 100%;
   position: fixed;

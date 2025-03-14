@@ -332,14 +332,6 @@ export const pagesData = [
         href: "/page-career",
         label: "Blazer & Coats",
       },
-      {
-        href: "/page-career",
-        label: "Kurtas",
-      },
-      {
-        href: "/page-career",
-        label: "Sherwani",
-      },
     ],
   },
   {

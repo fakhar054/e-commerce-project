@@ -228,15 +228,18 @@ export default function ShopDetails1({ product }) {
                       autoComplete="off"
                     />
                   )}
-                  {isAddedToCartProducts(product.id) ? (
-                    <div className="add_to_cart_div" onClick={togglePopup}>
+                  {/* {isAddedToCartProducts(data?.id) ? (
+                    <div
+                      className="add_to_cart_div"
+                      onClick={() => addProductToCart(product.id)}
+                    >
                       <a
                         // href={"/shop-cart"}
                         className="text_decoration"
                       >
                         Add To Cartttttt
                         {/* View Cart */}
-                      </a>
+                  {/* </a>
                     </div>
                   ) : (
                     <button
@@ -246,7 +249,8 @@ export default function ShopDetails1({ product }) {
                     >
                       Add To Cart
                     </button>
-                  )}
+                  // )} */}
+                  <button className="addCart">Add to Cart</button>
                   <CiHeart className="heart_icon" />
                 </div>
               </div>

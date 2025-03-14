@@ -13,6 +13,15 @@
   font-weight: 700;
   cursor: pointer;
 }
+button.addCart {
+  background-color: black;
+  color: white;
+  font-family: "Jost" !important;
+  outline: none;
+  border: none;
+  padding: 10px 40px;
+  border-radius: 8px;
+}
 .bg_color_gray {
   background-color: #c5c5c5 !important;
 }

@@ -5,6 +5,7 @@ import "./my-wishlist.css";
 import Header2 from "@/components/headers/Header2";
 import Footer2 from "@/components/footers/Footer2";
 import Features from "@/components/Features_div/page";
+import { MdDelete } from "react-icons/md";
 
 export default function page() {
   return (
@@ -24,6 +25,7 @@ export default function page() {
               <div className="product_parent_div">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
+                  <MdDelete className="delte_icon" />
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -37,6 +39,7 @@ export default function page() {
               <div className="product_parent_div">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
+                  <MdDelete className="delte_icon" />
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -50,6 +53,7 @@ export default function page() {
               <div className="product_parent_div">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
+                  <MdDelete className="delte_icon" />
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -63,6 +67,7 @@ export default function page() {
               <div className="product_parent_div">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
+                  <MdDelete className="delte_icon" />
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -76,6 +81,7 @@ export default function page() {
               <div className="product_parent_div">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
+                  <MdDelete className="delte_icon" />
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -89,6 +95,7 @@ export default function page() {
               <div className="product_parent_div">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
+                  <MdDelete className="delte_icon" />
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
