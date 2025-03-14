@@ -8,7 +8,11 @@ import { useContextElement } from "@/context/Context";
 import ShopSidebar from "./ShopSidebar";
 import { useEffect, useState } from "react";
 export default function Shop4() {
-  const { addProductToCart, isAddedToCartProducts, catalog = [] } = useContextElement();
+  const {
+    addProductToCart,
+    isAddedToCartProducts,
+    catalog = [],
+  } = useContextElement();
 
   const itemsPerPage = 15;
   const [activePage, setActivePage] = useState(1);
@@ -66,8 +70,8 @@ export default function Shop4() {
                   <div className="panel text-center sm:text-start">
                     <span className="fs-6 m-0 opacity-60">
                       Showed {itemsPerPage} products out of {totalItems} total.
-                    </span>  
-                  </div> 
+                    </span>
+                  </div>
                   <div>
                     <div className="hstack gap-1 fs-6">
                       <span>Filter by:</span>
@@ -145,13 +149,13 @@ export default function Shop4() {
                             </h5>
                             {/* <ul
                             className="nav-x gap-0 text-gray-100 dark:text-gray-700"
-                            title={`Average ${product.rating} out of 5`}
+                            title={`Average ${product?.rating} out of 5`}
                           >
                             {Array.from({ length: 5 }).map((_, index) => (
                               <li key={index}>
                                 <i
                                   className={`icon fs-6 unicon-star-filled ${
-                                    index < product.rating ? "text-yellow" : ""
+                                    index < product?.rating ? "text-yellow" : ""
                                   }`}
                                 />
                               </li>
@@ -225,7 +229,7 @@ export default function Shop4() {
                     </div>
                   ))
                 ) : (
-                  <h1>No products found</h1> 
+                  <h1>No products found</h1>
                 )}
               </div>
               <div className="nav-pagination pt-3 border-top border-gray-100 dark:border-gray-800">
@@ -233,13 +237,23 @@ export default function Shop4() {
                   className="nav-x uc-pagination hstack gap-1 justify-center ft-secondary"
                   data-uc-margin=""
                 >
-                  <Pagination totalPages={totalPages} activePage={activePage} setActivePage={setActivePage} />
+                  <Pagination
+                    totalPages={totalPages}
+                    activePage={activePage}
+                    setActivePage={setActivePage}
+                  />
                 </ul>
               </div>
             </div>
           </div>
           <div className="sticky-element col-auto col-md-12 w-md-100">
-            <ShopSidebar handleFilter={handleFilter} setPriceRange={setPriceRange} priceRange={priceRange} maxPrice={maxPrice} minPrice={minPrice}  />
+            <ShopSidebar
+              handleFilter={handleFilter}
+              setPriceRange={setPriceRange}
+              priceRange={priceRange}
+              maxPrice={maxPrice}
+              minPrice={minPrice}
+            />
           </div>
         </div>
       </div>

@@ -69,7 +69,7 @@ export default function ReviewSection({ product_review }) {
           <div className="col-lg-4">
             <h3>Overall rating</h3>
             <div className="parent_flex_div">
-              <h1>{product_review.rating}</h1>
+              <h1>{product_review?.rating}</h1>
               <div className="stars_review">
                 <div className="stars_div">
                   <FaStar className="star_icon" />

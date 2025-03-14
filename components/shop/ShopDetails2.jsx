@@ -104,19 +104,19 @@ export default function ShopDetails2({ product }) {
                   </div>
                   <div className="product-rating hstack justify-center items-center gap-1">
                     <span className="hstack gap-narrow fs-7 opacity-60">
-                      {product.rating}
+                      {product?.rating}
                       <span className="d-none sm:d-inline-block">reviews</span>
                     </span>
                     <ul
                       className="nav-x gap-0 text-gray-100 dark:text-gray-700"
                       title="Average 4 out of 5"
                     >
-                      {[...Array(product.rating)].map((elm, i) => (
+                      {[...Array(product?.rating)].map((elm, i) => (
                         <li key={i}>
                           <i className="icon fs-6 lg:fs-5 unicon-star-filled text-yellow" />
                         </li>
                       ))}
-                      {[...Array(5 - product.rating)].map((elm, i) => (
+                      {[...Array(5 - product?.rating)].map((elm, i) => (
                         <li key={i}>
                           <i className="icon fs-6 lg:fs-5 unicon-star-filled" />
                         </li>

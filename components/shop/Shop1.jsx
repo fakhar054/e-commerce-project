@@ -81,13 +81,13 @@ export default function Shop1() {
                       </h5>
                       <ul
                         className="nav-x gap-0 text-gray-100 dark:text-gray-700"
-                        title={`Average ${product.rating} out of 5`}
+                        title={`Average ${product?.rating} out of 5`}
                       >
                         {Array.from({ length: 5 }).map((_, index) => (
                           <li key={index}>
                             <i
                               className={`icon fs-6 unicon-star-filled ${
-                                index < product.rating ? "text-yellow" : ""
+                                index < product?.rating ? "text-yellow" : ""
                               }`}
                             />
                           </li>
