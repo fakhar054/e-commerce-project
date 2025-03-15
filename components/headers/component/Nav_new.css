@@ -1,10 +1,9 @@
 li.uc-nav-header {
   font-size: 14px;
   font-weight: 700;
-  margin-bottom: 20px;
-
-  /* color: red !important; */
+  /* margin-bottom: 20px; */
 }
+
 li a.inActiveMenu {
   color: #626665 !important;
   font-size: 12px;

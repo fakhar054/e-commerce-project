@@ -22,10 +22,11 @@ export default function page() {
           </div>
           <div className="col-lg-8">
             <div className="product_grid_main_div">
-              <div className="product_parent_div">
+              <div className="product_parent_div mb-2">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
                   <MdDelete className="delte_icon" />
+                  <button className="mt-1  add_to_cart">Show Variety</button>
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -36,10 +37,11 @@ export default function page() {
                   </div>
                 </div>
               </div>
-              <div className="product_parent_div">
+              <div className="product_parent_div mb-2">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
                   <MdDelete className="delte_icon" />
+                  <button className="mt-1  add_to_cart">Add to Cart</button>
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -50,10 +52,11 @@ export default function page() {
                   </div>
                 </div>
               </div>
-              <div className="product_parent_div">
+              <div className="product_parent_div mb-2">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
                   <MdDelete className="delte_icon" />
+                  <button className="mt-1  add_to_cart">Add to Cart</button>
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -64,10 +67,11 @@ export default function page() {
                   </div>
                 </div>
               </div>
-              <div className="product_parent_div">
+              <div className="product_parent_div mb-2">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
                   <MdDelete className="delte_icon" />
+                  <button className="mt-1  add_to_cart">Show Variety</button>
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -78,10 +82,11 @@ export default function page() {
                   </div>
                 </div>
               </div>
-              <div className="product_parent_div">
+              <div className="product_parent_div mb-2">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
                   <MdDelete className="delte_icon" />
+                  <button className="mt-1  add_to_cart">Add to Cart</button>
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -92,10 +97,11 @@ export default function page() {
                   </div>
                 </div>
               </div>
-              <div className="product_parent_div">
+              <div className="product_parent_div mb-2">
                 <div className="img_div">
                   <img src="/assets/images/common/dress_pic.png" alt="" />
                   <MdDelete className="delte_icon" />
+                  <button className="mt-1  add_to_cart">Show Variety</button>
                 </div>
                 <div className="content">
                   <h6>Allen Solly</h6>
@@ -108,7 +114,7 @@ export default function page() {
               </div>
             </div>
           </div>
-          <div className="mt-2">
+          <div className="mt-3">
             <Features />
           </div>
         </div>

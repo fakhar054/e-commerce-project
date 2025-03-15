@@ -15,8 +15,8 @@
 }
 
 #sign-up .height_width img.logoImg {
-  height: 100px;
-  width: 100px;
+  height: auto;
+  width: 130px;
   position: absolute;
   background: none;
   left: 30px;

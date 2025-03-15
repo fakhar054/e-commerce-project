@@ -6,11 +6,36 @@
 .product_parent_div .img_div {
   position: relative;
 }
+
+.product_parent_div button.add_to_cart {
+  border: none;
+  outline: none;
+  background-color: black;
+  color: white;
+  padding: 8px 0;
+  width: 130px;
+  font-weight: 600;
+  font-size: 16px;
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+
+.img_div:hover button.add_to_cart {
+  opacity: 1;
+  visibility: visible;
+}
+
 .img_div .delte_icon {
   font-size: 25px;
   position: absolute;
   top: 20px;
   right: 30px;
+  color: red;
   /* display: none; */
   visibility: hidden;
   transition: 0.3s ease-in-out, 0.3s ease-in-out;

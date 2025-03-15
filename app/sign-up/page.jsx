@@ -65,7 +65,8 @@ export default function Page() {
           <img
             className="logoImg"
             alt="Lexend"
-            src="/assets/images/common/logo_transparent.png"
+            src="/assets/images/common/logo_krist.png"
+            // src="/assets/images/common/logo_transparent.png"
           />
           <div className="col-lg-7">
             <img src="/assets/images/forms/sign_up_pic.png" alt="Sign Up" />

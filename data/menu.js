@@ -229,29 +229,178 @@ export const menuItems2 = [
   },
 ];
 
+// export const pagesData = [
+//   {
+//     id: 1,
+//     header: "Men",
+//     items: [
+//       {
+//         href: "#",
+//         label: "T-Shirt",
+//       },
+//       {
+//         href: "#",
+//         label: "Casual Shirts",
+//       },
+//       {
+//         href: "#",
+//         label: "Formal Shirts",
+//       },
+//       {
+//         href: "#",
+//         label: "Jackets",
+//       },
+//       {
+//         href: "/page-career",
+//         label: "Blazer & Coats",
+//       },
+//     ],
+//   },
+//   {
+//     id: 2,
+//     header: "Women",
+//     items: [
+//       {
+//         href: "/page-features",
+//         label: "T-Shirt",
+//       },
+//       {
+//         href: "/page-pricing",
+//         label: "Casual Shirts",
+//       },
+//       {
+//         href: "/page-integrations",
+//         label: "Formal Shirts",
+//       },
+//       {
+//         href: "/page-about",
+//         label: "Jackets",
+//       },
+//       {
+//         href: "/page-career",
+//         label: "Blazer & Coats",
+//       },
+//     ],
+//   },
+//   {
+//     id: 3,
+//     header: "Footwear",
+//     items: [
+//       {
+//         href: "/page-features",
+//         label: "T-Shirt",
+//       },
+//       {
+//         href: "/page-pricing",
+//         label: "Casual Shirts",
+//       },
+//       {
+//         href: "/page-integrations",
+//         label: "Formal Shirts",
+//       },
+//       {
+//         href: "/page-about",
+//         label: "Jackets",
+//       },
+//       {
+//         href: "/page-career",
+//         label: "Blazer & Coats",
+//       },
+//     ],
+//   },
+//   {
+//     id: 4,
+//     header: "Kids",
+//     items: [
+//       {
+//         href: "/page-features",
+//         label: "T-Shirt",
+//       },
+//       {
+//         href: "/page-pricing",
+//         label: "Casual Shirts",
+//       },
+//       {
+//         href: "/page-integrations",
+//         label: "Formal Shirts",
+//       },
+//       {
+//         href: "/page-about",
+//         label: "Jackets",
+//       },
+//       {
+//         href: "/page-career",
+//         label: "Blazer & Coats",
+//       },
+//     ],
+//   },
+//   {
+//     id: 5,
+//     header: "Indian & Festive Wear",
+//     items: [
+//       {
+//         href: "/page-career",
+//         label: "Kurtas",
+//       },
+//       {
+//         href: "/page-career",
+//         label: "Sherwani",
+//       },
+//     ],
+//   },
+//   {
+//     id: 6,
+//     header: "Western Wear",
+//     items: [
+//       {
+//         href: "/page-career",
+//         label: "Kurtas",
+//       },
+//       {
+//         href: "/page-career",
+//         label: "Sherwani",
+//       },
+//     ],
+//   },
+//   {
+//     id: 6,
+//     header: "Product Features",
+//     items: [
+//       {
+//         href: "/page-career",
+//         label: "Kurtas",
+//       },
+//       {
+//         href: "/page-career",
+//         label: "Sherwani",
+//       },
+//     ],
+//   },
+// ];
+
 export const pagesData = [
   {
     id: 1,
     header: "Men",
     items: [
       {
-        href: "/page-features",
+        href: "#",
         label: "T-Shirt",
       },
       {
-        href: "/page-pricing",
+        href: "#",
         label: "Casual Shirts",
       },
       {
-        href: "/page-integrations",
+        href: "#",
         label: "Formal Shirts",
       },
       {
-        href: "/page-about",
+        href: "#",
         label: "Jackets",
       },
       {
-        href: "/page-career",
+        href: "#",
         label: "Blazer & Coats",
       },
     ],
@@ -261,23 +410,23 @@ export const pagesData = [
     header: "Women",
     items: [
       {
-        href: "/page-features",
+        href: "#",
         label: "T-Shirt",
       },
       {
-        href: "/page-pricing",
+        href: "#",
         label: "Casual Shirts",
       },
       {
-        href: "/page-integrations",
+        href: "#",
         label: "Formal Shirts",
       },
       {
-        href: "/page-about",
+        href: "#",
         label: "Jackets",
       },
       {
-        href: "/page-career",
+        href: "#",
         label: "Blazer & Coats",
       },
     ],
@@ -287,23 +436,23 @@ export const pagesData = [
     header: "Footwear",
     items: [
       {
-        href: "/page-features",
+        href: "#",
         label: "T-Shirt",
       },
       {
-        href: "/page-pricing",
+        href: "#",
         label: "Casual Shirts",
       },
       {
-        href: "/page-integrations",
+        href: "#",
         label: "Formal Shirts",
       },
       {
-        href: "/page-about",
+        href: "#",
         label: "Jackets",
       },
       {
-        href: "/page-career",
+        href: "#",
         label: "Blazer & Coats",
       },
     ],
@@ -313,23 +462,23 @@ export const pagesData = [
     header: "Kids",
     items: [
       {
-        href: "/page-features",
+        href: "#",
         label: "T-Shirt",
       },
       {
-        href: "/page-pricing",
+        href: "#",
         label: "Casual Shirts",
       },
       {
-        href: "/page-integrations",
+        href: "#",
         label: "Formal Shirts",
       },
       {
-        href: "/page-about",
+        href: "#",
         label: "Jackets",
       },
       {
-        href: "/page-career",
+        href: "#",
         label: "Blazer & Coats",
       },
     ],
@@ -339,11 +488,11 @@ export const pagesData = [
     header: "Indian & Festive Wear",
     items: [
       {
-        href: "/page-career",
+        href: "#",
         label: "Kurtas",
       },
       {
-        href: "/page-career",
+        href: "#",
         label: "Sherwani",
       },
     ],
@@ -353,25 +502,25 @@ export const pagesData = [
     header: "Western Wear",
     items: [
       {
-        href: "/page-career",
+        href: "#",
         label: "Kurtas",
       },
       {
-        href: "/page-career",
+        href: "#",
         label: "Sherwani",
       },
     ],
   },
   {
-    id: 6,
+    id: 7,
     header: "Product Features",
     items: [
       {
-        href: "/page-career",
+        href: "#",
         label: "Kurtas",
       },
       {
-        href: "/page-career",
+        href: "#",
         label: "Sherwani",
       },
     ],

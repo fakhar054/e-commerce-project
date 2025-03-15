@@ -34,58 +34,57 @@ export default function Nav() {
         {/* uc-navbar-dropdown uc-drop uc-open */}
 
         <div className={`uc-navbar-dropdown uc-drop w-100`}>
-          <div
+          {/* <div
             className="uc-drop-grid row child-cols g-4 uc-grid uc-grid-stack"
             data-uc-grid=""
-          >
-            <div>
-              {/* <div className="uc-drop-grid row child-cols g-4 uc-grid uc-grid-stack"> */}
-              <div className="custom_grid">
-                {pagesData.map((section, index) => (
-                  <div key={index}>
-                    <ul className="uc-nav uc-navbar-dropdown-nav">
-                      <li className="uc-nav-header">{section.header}</li>
-                      {section.items.map((item, itemIndex) => (
-                        <li key={itemIndex}>
-                          {item.href.startsWith("/") ? (
-                            <Link
-                              href={item.href}
-                              className={
-                                pathname.split("/")[1] ==
-                                item.href.split("/")[1]
-                                  ? "menuActive"
-                                  : "inActiveMenu"
-                              }
-                            >
-                              {item.label}
-                              {item.badge && (
-                                <span
-                                  className={`fw-bold fs-8 ms-1 px-1 border rounded-pill ${item.badge.className}`}
-                                >
-                                  {item.badge.text}
-                                </span>
-                              )}
-                            </Link>
-                          ) : (
-                            <a href={item.href}>
-                              {item.label}
-                              {item.badge && (
-                                <span
-                                  className={`fw-bold fs-8 ms-1 px-1 border rounded-pill ${item.badge.className}`}
-                                >
-                                  {item.badge.text}
-                                </span>
-                              )}
-                            </a>
-                          )}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
+          > */}
+          <div>
+            {/* <div className="uc-drop-grid row child-cols g-4 uc-grid uc-grid-stack"> */}
+            <div className="custom_grid">
+              {pagesData.map((section, index) => (
+                <div key={index}>
+                  <ul className="uc-nav uc-navbar-dropdown-nav">
+                    <li className="uc-nav-header">{section.header}</li>
+                    {section.items.map((item, itemIndex) => (
+                      <li key={itemIndex}>
+                        {item.href.startsWith("/") ? (
+                          <Link
+                            href={item.href}
+                            className={
+                              pathname.split("/")[1] == item.href.split("/")[1]
+                                ? "menuActive"
+                                : "inActiveMenu"
+                            }
+                          >
+                            {item.label}
+                            {item.badge && (
+                              <span
+                                className={`fw-bold fs-8 ms-1 px-1 border rounded-pill ${item.badge.className}`}
+                              >
+                                {item.badge.text}
+                              </span>
+                            )}
+                          </Link>
+                        ) : (
+                          <a href={item.href}>
+                            {item.label}
+                            {item.badge && (
+                              <span
+                                className={`fw-bold fs-8 ms-1 px-1 border rounded-pill ${item.badge.className}`}
+                              >
+                                {item.badge.text}
+                              </span>
+                            )}
+                          </a>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
-            {/* <div className="col-3">
+          </div>
+          {/* <div className="col-3">
               <div className="panel w-100 overflow-hidden">
                 <div className="ratio ratio-3x4 overflow-hidden rounded">
                   <Image
@@ -102,7 +101,7 @@ export default function Nav() {
                 </div>
               </div>
             </div> */}
-          </div>
+          {/* </div> */}
         </div>
       </li>
 
