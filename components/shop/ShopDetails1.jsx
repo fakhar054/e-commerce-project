@@ -5,6 +5,9 @@ import "./shopDetails1.css";
 import Reviews from "./Reviews";
 import Link from "next/link";
 import ReviewForm from "./ReviewForm";
+
+import Features_div from "../Features_div/page";
+
 import ProductSlide from "./ProductSlide";
 import { useState, useEffect } from "react";
 import { useContextElement } from "@/context/Context";
@@ -102,7 +105,7 @@ export default function ShopDetails1({ product }) {
     router.push("/shop-cart");
   };
   return (
-    <article className="product type-product single product-single py-2 lg:py-6 xl:py-8">
+    <article className="product type-product single product-single py-2 lg:py-2 xl:py-2">
       <div
         className={`container single_product ${
           bodyColor ? "bg_color_gray" : ""
@@ -313,6 +316,9 @@ export default function ShopDetails1({ product }) {
         </div>
         {/* Products Related */}
         <FeaturedProducts />
+        <div className="features_sec mt-3 ">
+          <Features_div />
+        </div>
       </div>
     </article>
   );

@@ -5,6 +5,7 @@ import Breadcumb2 from "@/components/shop/Breadcumb2";
 import ShopDetails1 from "@/components/shop/ShopDetails1";
 import { products } from "@/data/products";
 import ReviewSection from "@/components/ReviewSection/ReviewSection";
+
 import "./shop_details.css";
 export const metadata = {
   title:
@@ -16,7 +17,6 @@ export default function ShopDetailsPage1({ params }) {
   const id = params.id;
   const product = products.filter((elm) => elm.id == id)[0] || products[0];
 
-  
   return (
     <>
       <div
@@ -30,7 +30,7 @@ export default function ShopDetailsPage1({ params }) {
           <Breadcumb2 product={product} />
           <ShopDetails1 product={product} />
         </div>
-        {/* <ReviewSection /> */}
+        {/* <featurs_div /> */}
         <Footer2 />
       </div>
     </>
