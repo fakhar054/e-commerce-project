@@ -33,7 +33,10 @@ export default function Nav() {
         </Link>
         {/* uc-navbar-dropdown uc-drop uc-open */}
 
-        <div className={`uc-navbar-dropdown uc-drop w-100`}>
+        <div
+          className={`custom_width
+          `}
+        >
           {/* <div
             className="uc-drop-grid row child-cols g-4 uc-grid uc-grid-stack"
             data-uc-grid=""
