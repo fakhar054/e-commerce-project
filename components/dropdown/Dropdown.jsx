@@ -4,11 +4,25 @@ import React, { useState, useEffect } from "react";
 import { RiArrowDropDownLine } from "react-icons/ri";
 import PriceSlider from "../PriceSlider/PriceSlider";
 
-export default function Dropdown() {
+export default function Dropdown({ setSelectedSizes, sizeCounts }) {
   const [ProductCategories, setProductCategories] = useState(false);
   const [filterbyPrice, setFilterbyPrice] = useState(false);
   const [filterbyColor, setFilterbyColor] = useState(false);
   const [filterbySize, setFilterbySize] = useState(false);
+  console.log(sizeCounts);
+
+  //for size
+  const [selectedSizes, setLocalSelectedSizes] = useState([]);
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
+    setLocalSelectedSizes((prevSizes) =>
+      checked ? [...prevSizes, name] : prevSizes.filter((size) => size !== name)
+    );
+  };
+  // Sync local state with MainPage state
+  useEffect(() => {
+    setSelectedSizes(selectedSizes);
+  }, [selectedSizes, setSelectedSizes]);
 
   const handlebySize = () => {
     setFilterbySize(!filterbySize);
@@ -41,7 +55,7 @@ export default function Dropdown() {
                 name="option1"
                 value="checked"
               />
-              <label for="myCheckbox">Men</label>
+              <label htmlFor="myCheckbox">Men</label>
             </li>
             <li>
               <input
@@ -50,7 +64,7 @@ export default function Dropdown() {
                 name="option1"
                 value="checked"
               />
-              <label for="myCheckbox">Women</label>
+              <label htmlFor="myCheckbox">Women</label>
             </li>
             <li>
               <input
@@ -59,7 +73,7 @@ export default function Dropdown() {
                 name="option1"
                 value="checked"
               />
-              <label for="myCheckbox">Makeup</label>
+              <label htmlFor="myCheckbox">Makeup</label>
             </li>
           </ul>
         )}
@@ -87,7 +101,7 @@ export default function Dropdown() {
                   name="option1"
                   value="checked"
                 />
-                <label for="myCheckbox">Red</label>
+                <label htmlFor="myCheckbox">Red</label>
               </li>
               <p>(12)</p>
             </div>
@@ -100,7 +114,7 @@ export default function Dropdown() {
                   name="option1"
                   value="checked"
                 />
-                <label for="myCheckbox">Orange</label>
+                <label htmlFor="myCheckbox">Orange</label>
               </li>
               <p>(12)</p>
             </div>
@@ -113,7 +127,7 @@ export default function Dropdown() {
                   name="option1"
                   value="checked"
                 />
-                <label for="myCheckbox">Blue</label>
+                <label htmlFor="myCheckbox">Blue</label>
               </li>
               <p>(12)</p>
             </div>
@@ -127,7 +141,7 @@ export default function Dropdown() {
                   name="option1"
                   value="checked"
                 />
-                <label for="myCheckbox">Yellow</label>
+                <label htmlFor="myCheckbox">Yellow</label>
               </li>
               <p>(12)</p>
             </div>
@@ -141,7 +155,7 @@ export default function Dropdown() {
                   name="option1"
                   value="checked"
                 />
-                <label for="myCheckbox">Green</label>
+                <label htmlFor="myCheckbox">Green</label>
               </li>
               <p>(12)</p>
             </div>
@@ -157,61 +171,63 @@ export default function Dropdown() {
               <li>
                 <input
                   type="checkbox"
-                  id="myCheckbox"
-                  name="option1"
+                  id="S"
+                  name="S"
                   value="checked"
+                  onChange={handleCheckboxChange}
                 />
-                <label for="myCheckbox">S</label>
+                <label htmlFor="S">S</label>
               </li>
-              <p>(12)</p>
+              <p>{sizeCounts.S}</p>
             </div>
             <div className="color_div d-flex">
               <li>
                 <input
                   type="checkbox"
-                  id="myCheckbox"
-                  name="option1"
+                  id="M"
+                  name="M"
                   value="checked"
+                  onChange={handleCheckboxChange}
                 />
-                <label for="myCheckbox">M</label>
+                <label htmlFor="M">M</label>
               </li>
-              <p>(12)</p>
+              <p>{sizeCounts.M}</p>
             </div>
             <div className="color_div d-flex">
               <li>
                 <input
                   type="checkbox"
-                  id="myCheckbox"
-                  name="option1"
-                  value="checked"
+                  id="large"
+                  name="large"
+                  onChange={handleCheckboxChange}
                 />
-                <label for="myCheckbox">L</label>
+                <label htmlFor="large">L</label>
               </li>
-              <p>(12)</p>
+              <p>{sizeCounts.L}</p>
             </div>
             <div className="color_div d-flex">
               <li>
                 <input
                   type="checkbox"
-                  id="myCheckbox"
-                  name="option1"
-                  value="checked"
+                  id="XL"
+                  name="XL"
+                  onChange={handleCheckboxChange}
                 />
-                <label for="myCheckbox">XL</label>
+                <label htmlFor="XL">XL</label>
               </li>
-              <p>(12)</p>
+              <p>{sizeCounts.XL}</p>
             </div>
             <div className="color_div d-flex">
               <li>
                 <input
                   type="checkbox"
-                  id="myCheckbox"
-                  name="option1"
-                  value="checked"
+                  id="XXL"
+                  name="XXL"
+                  onChange={handleCheckboxChange}
                 />
-                <label for="myCheckbox">XXL</label>
+                <label htmlFor="XXL">XXL</label>
               </li>
-              <p>(12)</p>
+              <p>{sizeCounts.XXL}</p>
             </div>
           </ul>
         )}

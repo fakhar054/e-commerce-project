@@ -18,8 +18,8 @@ const useAllProducts = () => {
         }
         const result = await response.json();
 
-        console.log("API Response:", result);
-        console.log("Products:", result.data);
+        // console.log("API Response:", result);
+        // console.log("Products:", result.data);
         setProducts(result.data || []);
       } catch (err) {
         setError(err.message);

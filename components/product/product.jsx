@@ -10,9 +10,7 @@ import { TbFilters } from "react-icons/tb";
 import { FaAngleDown } from "react-icons/fa";
 import useAllProducts from "../../app/all-products/All_ProductResponse_Api";
 
-export default function AllProduct() {
-  const { products, loading, error } = useAllProducts();
-
+export default function AllProduct({ products }) {
   const [showPopup, setShowPopup] = useState(false);
   const [favorite, setFavorite] = useState(false);
   const router = useRouter();
@@ -20,10 +18,6 @@ export default function AllProduct() {
   const [currentPage, setCurrentPage] = useState(1);
   const itemsPerPage = 6;
   const totalPages = Math.ceil(products.length / itemsPerPage);
-
-  if (loading) {
-    return <p>Loading products...</p>;
-  }
 
   const togglePopup = () => setShowPopup(!showPopup);
   const toggleFavorite = () => setFavorite(!favorite);
