@@ -4,46 +4,62 @@ import "./login.css";
 import "../../public/assets/css/theme/main.css";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
+import useAuth from "./useAuth";
 
 export default function LoginPage() {
   const router = useRouter();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
 
+  const [formData, setFormData] = useState({
+    email: "",
+    password: "",
+  });
+
+  const { login, loading, error } = useAuth();
+
+  // Handle input changes dynamically
   const handleChange = (e) => {
-    const { id, value } = e.target;
-    if (id === "email") setEmail(value);
-    if (id === "password") setPassword(value);
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
-
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const res = await fetch(
-        "https://foundation.alphalive.pro/api/user/login",
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ email, password }),
-        }
-      );
-
-      console.log(email, password);
-      const data = await res.json();
-      console.log("API Response:", data);
-
-      if (res.ok && data.data.token) {
-        localStorage.setItem("token", data.data.token);
-        alert("Login successful");
-        router.push("/");
-      } else {
-        alert(data.message || "Invalid credentials");
-      }
-    } catch (error) {
-      console.error("Login error:", error);
-      alert("Something went wrong. Please try again.");
-    }
+    login(formData.email, formData.password);
   };
+
+  // const handleChange = (e) => {
+  //   const { id, value } = e.target;
+  //   if (id === "email") setEmail(value);
+  //   if (id === "password") setPassword(value);
+  // };
+
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     const res = await fetch(
+  //       "https://foundation.alphalive.pro/api/user/login",
+  //       {
+  //         method: "POST",
+  //         headers: { "Content-Type": "application/json" },
+  //         body: JSON.stringify({ email, password }),
+  //       }
+  //     );
+
+  //     console.log(email, password);
+  //     const data = await res.json();
+  //     console.log("API Response from login: ", data);
+
+  //     if (res.ok && data.data.token) {
+  //       localStorage.setItem("token", data.data.token);
+  //       alert("Login successful");
+  //       router.push("/");
+  //     } else {
+  //       alert(data.message || "Invalid credentials");
+  //     }
+  //   } catch (error) {
+  //     console.error("Login error:", error);
+  //     alert("Something went wrong. Please try again.");
+  //   }
+  // };
 
   return (
     <section className="login" id="login">
@@ -69,8 +85,9 @@ export default function LoginPage() {
                   type="email"
                   className="form-control large border_radius"
                   id="email"
+                  name="email"
                   onChange={handleChange}
-                  value={email}
+                  value={formData.email}
                   placeholder="Enter your email"
                   required
                 />
@@ -81,12 +98,13 @@ export default function LoginPage() {
                   Password
                 </label>
                 <input
+                  name="password"
                   type="password"
                   className="form-control large border_radius"
                   id="password"
                   placeholder="Enter your password"
                   onChange={handleChange}
-                  value={password}
+                  value={formData.password}
                   required
                 />
               </div>

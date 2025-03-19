@@ -27,6 +27,11 @@ const nextConfig = {
         source: "/api/proxy",
         destination: "https://led-italia.it/api/catalog",
       },
+      {
+        source: "/api/products/filter/category",
+        destination:
+          "https://foundation.alphalive.pro/api/front/products/filter/category",
+      },
     ];
   },
 };
